@@ -6,9 +6,12 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/08/26 15:53:18 by poss             ###   ########.fr       */
+/*   Updated: 2023/08/26 17:30:35 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* only for the use of `size_t` and `NULL` */
+#include <string.h>
 
 /* from `stdlib.h` */
 int		ft_atoi(const char *nptr);
@@ -47,3 +50,6 @@ void	ft_bzero(void *s, size_t n);
 
 /* from `bsd/string.h` */
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
+
+void ft_putchar(char c);
+void ft_putstr(const char* s);
