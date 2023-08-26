@@ -35,7 +35,7 @@ it ain't much but it's honest work
 - ft_toupper
 - ft_tolower
 
-### Additional functions
+### Extension
 
 - ft_memalloc
 - ft_memdel
