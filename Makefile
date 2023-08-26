@@ -14,6 +14,7 @@ OBJS := $(C_FILES:%=$(BUILD_DIR)/%.o)
 CFLAGS  = -Wall -Wextra -Werror
 CFLAGS += -I$(INC_DIR) 
 
+.PHONY: all
 all: $(LIB)
 
 $(LIB): $(OBJS) $(LIB_H)
@@ -23,8 +24,13 @@ $(BUILD_DIR)/%.c.o: %.c $(LIB_H)
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+.PHONY: clean
 clean:
 	rm -rf $(BUILD_DIR)
 
+.PHONY: fclean
 fclean: clean
 	rm -rf $(LIB)
+
+.PHONY: re
+re: fclean $(LIB)
