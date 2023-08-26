@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/08/26 17:30:35 by poss             ###   ########.fr       */
+/*   Updated: 2023/08/26 23:56:29 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int		ft_atoi(const char *nptr);
 int		ft_isalpha(int);
 int		ft_isdigit(int);
 int		ft_isalnum(int);
+int		ft_isspace(int);
 int		ft_toascii(int);
 int		ft_isprint(int);
 int		ft_tolower(int);
