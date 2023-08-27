@@ -34,3 +34,7 @@ fclean: clean
 
 .PHONY: re
 re: fclean $(LIB)
+
+.PHONY: test
+test: $(LIB)
+	make -C test
