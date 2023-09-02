@@ -18,11 +18,13 @@ CFLAGS += -I$(INC_DIR)
 all: $(LIB)
 
 $(LIB): $(OBJS) $(LIB_H)
-	ar rcs $(LIB) $(OBJS)
+	@echo Building libft
+	@ar rcs $(LIB) $(OBJS)
 
 $(BUILD_DIR)/%.c.o: %.c $(LIB_H)
-	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@echo Compiling $<
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: clean
 clean:
@@ -50,5 +52,6 @@ check: re
 	@echo SAINTE NORMINETTE SOIS CLEMENTE
 	@python3 -c 'print("-" * 80)'
 	@echo
-	norminette $(C_FILES)
-	norminette $(LIB_H)
+	@norminette $(C_FILES)
+	@echo
+	@norminette $(LIB_H)
