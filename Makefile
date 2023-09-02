@@ -38,3 +38,7 @@ re: fclean $(LIB)
 .PHONY: test
 test: $(LIB)
 	make -C test
+
+.PHONY: fmt
+fmt:
+	bash aux/norme.sh

@@ -52,6 +52,6 @@ void	ft_bzero(void *s, size_t n);
 /* from `bsd/string.h` */
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
-void ft_putchar(char c);
-void ft_putstr(const char* s);
-void ft_putchar_fd(char c, int fd);
+void	ft_putchar(char c);
+void	ft_putstr(const char *s);
+void	ft_putchar_fd(char c, int fd);
