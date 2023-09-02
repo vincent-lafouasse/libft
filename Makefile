@@ -28,22 +28,25 @@ $(BUILD_DIR)/%.c.o: %.c $(LIB_H)
 
 .PHONY: clean
 clean:
-	rm -rf $(BUILD_DIR)
+	@echo Cleaning up object files
+	@rm -rf $(BUILD_DIR)
 
 .PHONY: fclean
 fclean: clean
-	rm -rf $(LIB)
+	@echo Cleaning up lib
+	@rm -rf $(LIB)
 
 .PHONY: re
 re: fclean $(LIB)
 
 .PHONY: test
 test: $(LIB)
-	make -C test
+	@make -C test
 
 .PHONY: fmt
 fmt:
-	bash aux/norme.sh
+	@echo Formatting
+	@bash aux/norme.sh
 
 .PHONY: check
 check: re

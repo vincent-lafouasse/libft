@@ -35,23 +35,28 @@ test: $(BUILD_DIR)/$(EXEC)
 
 # Linking
 $(BUILD_DIR)/$(EXEC): $(OBJS)
-	make -C ..
-	$(CXX) $^ -o $@ $(LDFLAGS) $(LDLIBS)
+	@echo Linking test binary
+	@make -s -C ..
+	@$(CXX) $^ -o $@ $(LDFLAGS) $(LDLIBS)
 
 # Compile C 
 $(BUILD_DIR)/%.c.o: %.c
-	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@echo Compiling $<
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 # Compile CXX
 $(BUILD_DIR)/%.cpp.o: %.cpp
-	mkdir -p $(dir $@)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	@echo Compiling $<
+	@mkdir -p $(dir $@)
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 .PHONY: clean
 clean:
-	$(RM) -r $(BUILD_DIR)
+	@echo Cleaning up test
+	@$(RM) -r $(BUILD_DIR)
 
 .PHONY: fmt
 fmt:
-	clang-format -i $(SRCS)
+	@echo Formatting
+	@clang-format -i $(SRCS)
