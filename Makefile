@@ -42,3 +42,13 @@ test: $(LIB)
 .PHONY: fmt
 fmt:
 	bash aux/norme.sh
+
+.PHONY: check
+check: re
+	@echo
+	@python3 -c 'print("-" * 80)'
+	@echo SAINTE NORMINETTE SOIS CLEMENTE
+	@python3 -c 'print("-" * 80)'
+	@echo
+	norminette $(C_FILES)
+	norminette $(LIB_H)
