@@ -52,6 +52,6 @@ $(BUILD_DIR)/%.cpp.o: %.cpp
 clean:
 	$(RM) -r $(BUILD_DIR)
 
-.PHONY: format
-format:
-	clang-format -i $(SRCS_H)
+.PHONY: fmt
+fmt:
+	clang-format -i $(SRCS)
