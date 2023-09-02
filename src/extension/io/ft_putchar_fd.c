@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/26 17:16:24 by poss              #+#    #+#             */
-/*   Updated: 2023/08/28 12:13:16 by poss             ###   ########.fr       */
+/*   Created: 2023/08/28 12:11:41 by poss              #+#    #+#             */
+/*   Updated: 2023/08/28 12:14:08 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-#define STDOUT 1
-
-void	ft_putchar(char c)
+void	ft_putchar_fd(char c, int fd)
 {
-	ft_putchar_fd(c, STDOUT);
+	write(fd, &c, 1);
 }

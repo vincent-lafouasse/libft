@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/08/26 23:56:29 by poss             ###   ########.fr       */
+/*   Updated: 2023/09/02 12:34:39 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /* from `stdlib.h` */
 int		ft_atoi(const char *nptr);
 
-/* from `stdlib.h` */
+/* from `ctype.h` */
 int		ft_isalpha(int);
 int		ft_isdigit(int);
 int		ft_isalnum(int);
@@ -54,3 +54,4 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 void ft_putchar(char c);
 void ft_putstr(const char* s);
+void ft_putchar_fd(char c, int fd);
