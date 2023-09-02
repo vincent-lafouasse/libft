@@ -35,8 +35,8 @@ test: $(BUILD_DIR)/$(EXEC)
 
 # Linking
 $(BUILD_DIR)/$(EXEC): $(OBJS)
-	@echo Linking test binary
 	@make -s -C ..
+	@echo Linking test binary
 	@$(CXX) $^ -o $@ $(LDFLAGS) $(LDLIBS)
 
 # Compile C 
