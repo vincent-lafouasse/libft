@@ -50,6 +50,8 @@ fmt:
 
 .PHONY: check
 check: re
+	@cppcheck --language=c $(C_FILES)
+	@cppcheck --language=c $(LIB_H)
 	@echo
 	@python3 -c 'print("-" * 80)'
 	@echo SAINTE NORMINETTE SOIS CLEMENTE
