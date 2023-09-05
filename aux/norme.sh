@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 function norm {
-	echo Formatting $(basename $1)
-    python3 -m c_formatter_42 < $1 > temp
-    mv temp $1
+	echo Formatting "$(basename "$1")"
+	python3 -m c_formatter_42 < "$1" >temp
+	mv temp "$1"
 }
 
 SRC_DIR='./src'
@@ -15,5 +15,5 @@ H_FILES=$(find $H_DIR -name '*.h')
 TO_NORM="$C_FILES $H_FILES"
 
 for file in $TO_NORM; do
-    norm $file
+	norm "$file"
 done
