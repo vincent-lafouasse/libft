@@ -6,52 +6,27 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/09/02 12:34:39 by poss             ###   ########.fr       */
+/*   Updated: 2023/09/05 15:04:01 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* only for the use of `size_t` and `NULL` */
 #include <string.h>
 
-/* from `stdlib.h` */
-int		ft_atoi(const char *nptr);
+/* # string operations ------------------------------------------------------ */
+int		ft_atoi(const char *num_str);
 
-/* from `ctype.h` */
-int		ft_isalpha(int);
-int		ft_isdigit(int);
-int		ft_isalnum(int);
-int		ft_isspace(int);
-int		ft_toascii(int);
-int		ft_isprint(int);
-int		ft_tolower(int);
-int		ft_toupper(int);
+/* # character types (`ctype.h`) -------------------------------------------- */
+int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_isalnum(int c);
+int		ft_isspace(int c);
+int		ft_toascii(int c);
+int		ft_isprint(int c);
+int		ft_tolower(int c);
+int		ft_toupper(int c);
 
-/* from `string.h` */
-void	*ft_memset(void *, int, size_t);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
-void	*ft_memmove(void *dest, const void *src, size_t n);
-void	*ft_memchr(const void *s, int c, size_t n);
-int		ft_memcmp(const void *s1, const void *s2, size_t n);
-char	*ft_strcat(char *dest, const char *src);
-char	*ft_strncat(char *dest, const char *src, size_t n);
-char	*ft_strchr(const char *, int);
-char	*ft_strrchr(const char *, int);
-int		ft_strcmp(const char *, const char *);
-int		ft_strncmp(const char *, const char *, size_t n);
-char	*ft_strcpy(char *toHere, const char *fromHere);
-char	*ft_strncpy(char *toHere, const char *fromHere, size_t n);
-size_t	ft_strlen(const char *);
-char	*ft_strstr(const char *haystack, const char *needle);
-char	*ft_strdup(const char *);
-void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
-char	*ft_strnstr(const char *big, const char *little, size_t len);
-
-/* from `strings.h` */
-void	ft_bzero(void *s, size_t n);
-
-/* from `bsd/string.h` */
-size_t	ft_strlcat(char *dst, const char *src, size_t size);
-
+/* # I/O -------------------------------------------------------------------- */
 void	ft_putchar(char c);
 void	ft_putstr(const char *s);
 void	ft_putchar_fd(char c, int fd);
