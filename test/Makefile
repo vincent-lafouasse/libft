@@ -12,10 +12,10 @@ OBJS  := $(SRCS:%=$(BUILD_DIR)/%.o)
 
 LDLIBS   = -lgtest -lgtest_main -lpthread
 LDLIBS  += -lft
-LDFLAGS := -L/usr/lib -L/usr/local/lib -L..
+LDFLAGS += -L..
 
 CFLAGS  = -Wall -Wextra -Werror
-CFLAGS += -pedantic -Wmissing-declarations
+CFLAGS += -pedantic
 CFLAGS += -g3
 CFLAGS += -I..
 
@@ -58,5 +58,5 @@ clean:
 
 .PHONY: fmt
 fmt:
-	@echo Formatting
+	@echo Formatting tests
 	@clang-format -i $(SRCS)
