@@ -27,42 +27,42 @@ extern "C"
 
 void test_isupper(int c)
 {
-  EXPECT_EQ(ft_isupper(c), isupper(c));
+  EXPECT_EQ(ft_isupper(c), isupper(c)) << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
 void test_islower(int c)
 {
-  EXPECT_EQ(ft_islower(c), islower(c));
+  EXPECT_EQ(ft_islower(c), islower(c)) << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
 void test_isspace(int c)
 {
-  EXPECT_EQ(ft_isspace(c), isspace(c));
+  EXPECT_EQ(ft_isspace(c), isspace(c)) << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
 void test_isalpha(int c)
 {
-  EXPECT_EQ(ft_isalpha(c), isalpha(c));
+  EXPECT_EQ(ft_isalpha(c), isalpha(c)) << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
 void test_isdigit(int c)
 {
-  EXPECT_EQ(ft_isdigit(c), isdigit(c));
+  EXPECT_EQ(ft_isdigit(c), isdigit(c)) << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
 void test_isalnum(int c)
 {
-  EXPECT_EQ(ft_isalnum(c), isalnum(c));
+  EXPECT_EQ(ft_isalnum(c), isalnum(c)) << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
 void test_isascii(int c)
 {
-  EXPECT_EQ(ft_isascii(c), isascii(c));
+  EXPECT_EQ(ft_isascii(c), isascii(c)) << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
 void test_isprint(int c)
 {
-  EXPECT_EQ(ft_isprint(c), isprint(c));
+  EXPECT_EQ(ft_isprint(c), isprint(c)) << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
 // Poss extension ----------------------

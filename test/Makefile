@@ -26,13 +26,13 @@ GTESTFLAGS = --gtest_color=yes --gtest_print_time=0
 GTESTFLAGS += --gtest_break_on_failure
 
 .PHONY: test
-test: $(BUILD_DIR)/$(EXEC)
+test: fullclean $(BUILD_DIR)/$(EXEC)
 	@echo
 	@python3 -c 'print("-" * 80)'
 	@echo TEST OUTPUT
 	@python3 -c 'print("-" * 80)'
 	@echo
-	@./$< $(GTESTFLAGS)
+	@$(BUILD_DIR)/$(EXEC) $(GTESTFLAGS)
 
 # Linking
 $(BUILD_DIR)/$(EXEC): $(OBJS)
@@ -56,6 +56,10 @@ $(BUILD_DIR)/%.cpp.o: %.cpp
 clean:
 	@echo Cleaning up test
 	@$(RM) -r $(BUILD_DIR)
+
+.PHONY: fullclean
+fullclean: clean
+	make -C .. fclean
 
 .PHONY: fmt
 fmt:
