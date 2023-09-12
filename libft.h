@@ -20,11 +20,12 @@ int		ft_atoi(const char *num_str);
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
-int		ft_isspace(int c);
-int		ft_toascii(int c);
+int		ft_isascii(int c);
 int		ft_isprint(int c);
-int		ft_tolower(int c);
-int		ft_toupper(int c);
+
+int		ft_isupper(int c);
+int		ft_islower(int c);
+int		ft_isspace(int c);
 
 /* # I/O -------------------------------------------------------------------- */
 void	ft_putchar(char c);

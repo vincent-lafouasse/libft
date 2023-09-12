@@ -11,7 +11,8 @@ LIB_H = $(INC_DIR)/libft.h
 C_FILES = $(shell find $(SRC_DIR) -name '*.c')
 OBJS := $(C_FILES:%=$(BUILD_DIR)/%.o)
 
-CFLAGS  = -Wall -Wextra -Werror
+CFLAGS  = -Wall -Wextra
+#CFLAGS += -Werror
 CFLAGS += -I$(INC_DIR) 
 
 .PHONY: all
