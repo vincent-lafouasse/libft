@@ -13,10 +13,10 @@
 /* only for the declarations of `size_t` and `NULL` */
 #include <stddef.h>
 
-/* # string operations ------------------------------------------------------ */
+/* ----- string operations -------------------------------------------------- */
 int		ft_atoi(const char *num_str);
 
-/* # character types (`ctype.h`) -------------------------------------------- */
+/* ----- character types (`ctype.h`) ---------------------------------------- */
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
 int		ft_isalnum(int c);
@@ -27,7 +27,13 @@ int		ft_isupper(int c);
 int		ft_islower(int c);
 int		ft_isspace(int c);
 
-/* # I/O -------------------------------------------------------------------- */
+/* ----- I/O ---------------------------------------------------------------- */
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(const char *s, int fd);
+void	ft_putendl_fd(const char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+
 void	ft_putchar(char c);
 void	ft_putstr(const char *s);
-void	ft_putchar_fd(char c, int fd);
+void	ft_putendl(const char *s);
+void	ft_putnbr(int n);
