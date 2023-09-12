@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <gtest/gtest.h>
+#include <cstdio>
 
 extern "C"
 {
@@ -22,6 +23,102 @@ extern "C"
 #define BEL 0x07
 #define ESC 0x1B
 #define DEL 0x7F
+
+// Poss extension ----------------------
+
+TEST(Ctype, IsUpper)
+{
+  EXPECT_TRUE(ft_isupper('B'));
+  EXPECT_TRUE(ft_isupper('O'));
+  EXPECT_TRUE(ft_isupper('N'));
+  EXPECT_TRUE(ft_isupper('J'));
+  EXPECT_TRUE(ft_isupper('O'));
+  EXPECT_TRUE(ft_isupper('U'));
+  EXPECT_TRUE(ft_isupper('R'));
+
+  EXPECT_FALSE(ft_isupper('4'));
+  EXPECT_FALSE(ft_isupper('2'));
+  EXPECT_FALSE(ft_isupper('0'));
+  EXPECT_FALSE(ft_isupper('b'));
+  EXPECT_FALSE(ft_isupper('o'));
+  EXPECT_FALSE(ft_isupper('n'));
+  EXPECT_FALSE(ft_isupper('j'));
+  EXPECT_FALSE(ft_isupper('o'));
+  EXPECT_FALSE(ft_isupper('u'));
+  EXPECT_FALSE(ft_isupper('r'));
+  EXPECT_FALSE(ft_isupper(EOT));
+  EXPECT_FALSE(ft_isupper(BEL));
+  EXPECT_FALSE(ft_isupper(ESC));
+  EXPECT_FALSE(ft_isupper(DEL));
+  EXPECT_FALSE(ft_isupper('\0'));
+
+  EXPECT_FALSE(ft_isupper(EOF_));
+  EXPECT_FALSE(ft_isupper(420));
+}
+
+TEST(Ctype, IsLower)
+{
+  EXPECT_TRUE(ft_islower('b'));
+  EXPECT_TRUE(ft_islower('o'));
+  EXPECT_TRUE(ft_islower('n'));
+  EXPECT_TRUE(ft_islower('j'));
+  EXPECT_TRUE(ft_islower('o'));
+  EXPECT_TRUE(ft_islower('u'));
+  EXPECT_TRUE(ft_islower('r'));
+
+  EXPECT_FALSE(ft_islower('4'));
+  EXPECT_FALSE(ft_islower('2'));
+  EXPECT_FALSE(ft_islower('0'));
+  EXPECT_FALSE(ft_islower('B'));
+  EXPECT_FALSE(ft_islower('O'));
+  EXPECT_FALSE(ft_islower('N'));
+  EXPECT_FALSE(ft_islower('J'));
+  EXPECT_FALSE(ft_islower('O'));
+  EXPECT_FALSE(ft_islower('U'));
+  EXPECT_FALSE(ft_islower('R'));
+  EXPECT_FALSE(ft_islower(EOT));
+  EXPECT_FALSE(ft_islower(BEL));
+  EXPECT_FALSE(ft_islower(ESC));
+  EXPECT_FALSE(ft_islower(DEL));
+  EXPECT_FALSE(ft_islower('\0'));
+
+  EXPECT_FALSE(ft_islower(EOF_));
+  EXPECT_FALSE(ft_islower(420));
+}
+
+TEST(Ctype, IsSpace)
+{
+  EXPECT_TRUE(ft_isspace(' '));
+  EXPECT_TRUE(ft_isspace('\r'));
+  EXPECT_TRUE(ft_isspace('\t'));
+  EXPECT_TRUE(ft_isspace('\n'));
+  EXPECT_TRUE(ft_isspace('\v'));
+  EXPECT_TRUE(ft_isspace('\f'));
+
+  EXPECT_FALSE(ft_isspace('4'));
+  EXPECT_FALSE(ft_isspace('2'));
+  EXPECT_FALSE(ft_isspace('0'));
+  EXPECT_FALSE(ft_isspace('B'));
+  EXPECT_FALSE(ft_isspace('o'));
+  EXPECT_FALSE(ft_isspace('n'));
+  EXPECT_FALSE(ft_isspace('j'));
+  EXPECT_FALSE(ft_isspace('o'));
+  EXPECT_FALSE(ft_isspace('u'));
+  EXPECT_FALSE(ft_isspace('r'));
+  EXPECT_FALSE(ft_isspace('L'));
+  EXPECT_FALSE(ft_isspace('o'));
+  EXPECT_FALSE(ft_isspace('l'));
+  EXPECT_FALSE(ft_isspace(EOT));
+  EXPECT_FALSE(ft_isspace(BEL));
+  EXPECT_FALSE(ft_isspace(ESC));
+  EXPECT_FALSE(ft_isspace(DEL));
+  EXPECT_FALSE(ft_isspace('\0'));
+
+  EXPECT_FALSE(ft_isspace(EOF_));
+  EXPECT_FALSE(ft_isspace(420));
+}
+
+// Lib functions
 
 TEST(Ctype, IsAlpha)
 {
@@ -51,7 +148,6 @@ TEST(Ctype, IsAlpha)
 
 TEST(Ctype, IsDigit)
 {
-
   EXPECT_TRUE(ft_isdigit('4'));
   EXPECT_TRUE(ft_isdigit('2'));
   EXPECT_TRUE(ft_isdigit('0'));
@@ -151,98 +247,4 @@ TEST(Ctype, IsPrint)
 
   EXPECT_FALSE(ft_isprint(EOF_));
   EXPECT_FALSE(ft_isprint(420));
-}
-
-// Poss extension ----------------------
-
-TEST(Ctype, IsUpper)
-{
-  EXPECT_TRUE(ft_isupper('B'));
-  EXPECT_TRUE(ft_isupper('O'));
-  EXPECT_TRUE(ft_isupper('N'));
-  EXPECT_TRUE(ft_isupper('J'));
-  EXPECT_TRUE(ft_isupper('O'));
-  EXPECT_TRUE(ft_isupper('U'));
-  EXPECT_TRUE(ft_isupper('R'));
-
-  EXPECT_FALSE(ft_isupper('4'));
-  EXPECT_FALSE(ft_isupper('2'));
-  EXPECT_FALSE(ft_isupper('0'));
-  EXPECT_FALSE(ft_isupper('b'));
-  EXPECT_FALSE(ft_isupper('o'));
-  EXPECT_FALSE(ft_isupper('n'));
-  EXPECT_FALSE(ft_isupper('j'));
-  EXPECT_FALSE(ft_isupper('o'));
-  EXPECT_FALSE(ft_isupper('u'));
-  EXPECT_FALSE(ft_isupper('r'));
-  EXPECT_FALSE(ft_isupper(EOT));
-  EXPECT_FALSE(ft_isupper(BEL));
-  EXPECT_FALSE(ft_isupper(ESC));
-  EXPECT_FALSE(ft_isupper(DEL));
-  EXPECT_FALSE(ft_isupper('\0'));
-
-  EXPECT_FALSE(ft_isupper(EOF_));
-  EXPECT_FALSE(ft_isupper(420));
-}
-
-TEST(Ctype, IsLower)
-{
-  EXPECT_TRUE(ft_islower('b'));
-  EXPECT_TRUE(ft_islower('o'));
-  EXPECT_TRUE(ft_islower('n'));
-  EXPECT_TRUE(ft_islower('j'));
-  EXPECT_TRUE(ft_islower('o'));
-  EXPECT_TRUE(ft_islower('u'));
-  EXPECT_TRUE(ft_islower('r'));
-
-  EXPECT_FALSE(ft_islower('4'));
-  EXPECT_FALSE(ft_islower('2'));
-  EXPECT_FALSE(ft_islower('0'));
-  EXPECT_FALSE(ft_islower('B'));
-  EXPECT_FALSE(ft_islower('O'));
-  EXPECT_FALSE(ft_islower('N'));
-  EXPECT_FALSE(ft_islower('J'));
-  EXPECT_FALSE(ft_islower('O'));
-  EXPECT_FALSE(ft_islower('U'));
-  EXPECT_FALSE(ft_islower('R'));
-  EXPECT_FALSE(ft_islower(EOT));
-  EXPECT_FALSE(ft_islower(BEL));
-  EXPECT_FALSE(ft_islower(ESC));
-  EXPECT_FALSE(ft_islower(DEL));
-  EXPECT_FALSE(ft_islower('\0'));
-
-  EXPECT_FALSE(ft_islower(EOF_));
-  EXPECT_FALSE(ft_islower(420));
-}
-
-TEST(Ctype, IsSpace)
-{
-  EXPECT_TRUE(ft_isspace(' '));
-  EXPECT_TRUE(ft_isspace('\r'));
-  EXPECT_TRUE(ft_isspace('\t'));
-  EXPECT_TRUE(ft_isspace('\n'));
-  EXPECT_TRUE(ft_isspace('\v'));
-  EXPECT_TRUE(ft_isspace('\f'));
-
-  EXPECT_FALSE(ft_isspace('4'));
-  EXPECT_FALSE(ft_isspace('2'));
-  EXPECT_FALSE(ft_isspace('0'));
-  EXPECT_FALSE(ft_isspace('B'));
-  EXPECT_FALSE(ft_isspace('o'));
-  EXPECT_FALSE(ft_isspace('n'));
-  EXPECT_FALSE(ft_isspace('j'));
-  EXPECT_FALSE(ft_isspace('o'));
-  EXPECT_FALSE(ft_isspace('u'));
-  EXPECT_FALSE(ft_isspace('r'));
-  EXPECT_FALSE(ft_isspace('L'));
-  EXPECT_FALSE(ft_isspace('o'));
-  EXPECT_FALSE(ft_isspace('l'));
-  EXPECT_FALSE(ft_isspace(EOT));
-  EXPECT_FALSE(ft_isspace(BEL));
-  EXPECT_FALSE(ft_isspace(ESC));
-  EXPECT_FALSE(ft_isspace(DEL));
-  EXPECT_FALSE(ft_isspace('\0'));
-
-  EXPECT_FALSE(ft_isspace(EOF_));
-  EXPECT_FALSE(ft_isspace(420));
 }
