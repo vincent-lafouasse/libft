@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* only for the use of `size_t` and `NULL` */
-#include <string.h>
+/* only for the declarations of `size_t` and `NULL` */
+#include <stddef.h>
 
 /* # string operations ------------------------------------------------------ */
 int		ft_atoi(const char *num_str);
