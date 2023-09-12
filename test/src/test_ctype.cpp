@@ -18,6 +18,9 @@ extern "C"
 #include "libft.h"
 };
 
+#define LOWER_BOUND -30
+#define UPPER_BOUND 420
+
 void test_isupper(int c)
 {
   EXPECT_EQ(ft_isupper(c), isupper(c))
@@ -70,19 +73,19 @@ void test_isprint(int c)
 
 TEST(Ctype, IsUpper)
 {
-  for (int c = -1; c < 420; c++)
+  for (int c = LOWER_BOUND; c < UPPER_BOUND; c++)
     test_isupper(c);
 }
 
 TEST(Ctype, IsLower)
 {
-  for (int c = -1; c < 420; c++)
+  for (int c = LOWER_BOUND; c < UPPER_BOUND; c++)
     test_islower(c);
 }
 
 TEST(Ctype, IsSpace)
 {
-  for (int c = -1; c < 420; c++)
+  for (int c = LOWER_BOUND; c < UPPER_BOUND; c++)
     test_isspace(c);
 }
 
@@ -90,30 +93,30 @@ TEST(Ctype, IsSpace)
 
 TEST(Ctype, IsAlpha)
 {
-  for (int c = -1; c < 420; c++)
+  for (int c = LOWER_BOUND; c < UPPER_BOUND; c++)
     test_isalpha(c);
 }
 
 TEST(Ctype, IsDigit)
 {
-  for (int c = -1; c < 420; c++)
+  for (int c = LOWER_BOUND; c < UPPER_BOUND; c++)
     test_isdigit(c);
 }
 
 TEST(Ctype, IsAlnum)
 {
-  for (int c = -1; c < 420; c++)
+  for (int c = LOWER_BOUND; c < UPPER_BOUND; c++)
     test_isalnum(c);
 }
 
 TEST(Ctype, IsASCII)
 {
-  for (int c = -1; c < 420; c++)
+  for (int c = LOWER_BOUND; c < UPPER_BOUND; c++)
     test_isascii(c);
 }
 
 TEST(Ctype, IsPrint)
 {
-  for (int c = -1; c < 420; c++)
+  for (int c = LOWER_BOUND; c < UPPER_BOUND; c++)
     test_isprint(c);
 }
