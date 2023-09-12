@@ -12,10 +12,9 @@
 
 #include "libft.h"
 
+#define STDOUT 1
+
 void	ft_putstr(const char *s)
 {
-	while (*s)
-	{
-		ft_putchar(*s++);
-	}
+	ft_putstr_fd(s, STDOUT);
 }
