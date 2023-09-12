@@ -23,6 +23,7 @@ CXXFLAGS  = $(CFLAGS)
 CXXFLAGS += -std=c++17
 
 GTESTFLAGS = --gtest_color=yes --gtest_print_time=0
+GTESTFLAGS += --gtest_break_on_failure
 
 .PHONY: test
 test: $(BUILD_DIR)/$(EXEC)
