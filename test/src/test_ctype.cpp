@@ -23,8 +23,7 @@ extern "C"
 #define BEL 0x07
 #define ESC 0x1B
 #define DEL 0x7F
-
-// Poss extension ----------------------
+#define EUR 200
 
 void test_isupper(int c)
 {
@@ -66,6 +65,8 @@ void test_isprint(int c)
   EXPECT_EQ(ft_isprint(c), isprint(c));
 }
 
+// Poss extension ----------------------
+
 TEST(Ctype, IsUpper)
 {
   test_isupper('B');
@@ -93,6 +94,7 @@ TEST(Ctype, IsUpper)
   test_isupper('\0');
 
   test_isupper(EOF_);
+  test_isupper(EUR);
   test_isupper(420);
 }
 
@@ -123,6 +125,7 @@ TEST(Ctype, IsLower)
   test_islower('\0');
 
   test_islower(EOF_);
+  test_islower(EUR);
   test_islower(420);
 }
 
@@ -155,10 +158,11 @@ TEST(Ctype, IsSpace)
   test_isspace('\0');
 
   test_isspace(EOF_);
+  test_isspace(EUR);
   test_isspace(420);
 }
 
-// Lib functions
+// Libc functions -----------------------------------------
 
 TEST(Ctype, IsAlpha)
 {
@@ -183,6 +187,7 @@ TEST(Ctype, IsAlpha)
   test_isalpha('\0');
 
   test_isalpha(EOF_);
+  test_isalpha(EUR);
   test_isalpha(420);
 }
 
@@ -209,6 +214,7 @@ TEST(Ctype, IsDigit)
   test_isdigit('\0');
 
   test_isdigit(EOF_);
+  test_isdigit(EUR);
   test_isdigit(420);
 }
 
@@ -235,6 +241,7 @@ TEST(Ctype, IsAlnum)
   test_isalnum('\0');
 
   test_isalnum(EOF_);
+  test_isalnum(EUR);
   test_isalnum(420);
 }
 
@@ -260,6 +267,7 @@ TEST(Ctype, IsASCII)
   test_isascii('\0');
 
   test_isascii(EOF_);
+  test_isascii(EUR);
   test_isascii(420);
 }
 
@@ -286,5 +294,6 @@ TEST(Ctype, IsPrint)
   test_isprint('\0');
 
   test_isprint(EOF_);
+  test_isprint(EUR);
   test_isprint(420);
 }
