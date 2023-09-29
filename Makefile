@@ -16,7 +16,10 @@ CFLAGS  = -Wall -Wextra
 CFLAGS += -I$(INC_DIR) 
 
 .PHONY: all
-all: $(LIB)
+all: build
+
+.PHONY: build
+build: $(LIB)
 
 $(LIB): $(OBJS) $(LIB_H)
 	@echo Building libft
@@ -61,3 +64,18 @@ check: re
 	@norminette $(C_FILES)
 	@echo
 	@norminette $(LIB_H)
+
+# LSP stuff, don't worry about it
+.PHONY: update
+update:
+	make clean
+	mkdir -p $(BUILD_DIR)
+	bear --output $(BUILD_DIR)/compile_commands.json -- make build
+
+# aliases
+.PHONY: b f c u
+b: build
+f: format
+c: clean
+u: update
+
