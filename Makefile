@@ -73,9 +73,10 @@ update:
 	bear --output $(BUILD_DIR)/compile_commands.json -- make build
 
 # aliases
-.PHONY: b f c u
+.PHONY: b f c u t
 b: build
-f: format
+f: fmt
 c: clean
 u: update
+t: test
 
