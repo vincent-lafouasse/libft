@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/11/07 15:01:05 by vlafouas         ###   ########.fr       */
+/*   Updated: 2023/11/07 16:09:22 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,9 @@ void					*ft_calloc(size_t nmemb, size_t size);
 
 /* ----- from `string.h` ---------------------------------------------------- */
 void					*ft_memset(void *s, int c, size_t n);
+
+/* ----- from `strings.h` --------------------------------------------------- */
+void					ft_bzero(void *s, size_t n);
 
 /* ----- character types (`ctype.h`) ---------------------------------------- */
 int						ft_isalpha(int c);
