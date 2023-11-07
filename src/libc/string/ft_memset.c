@@ -6,13 +6,13 @@
 /*   By: vlafouas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:33:27 by vlafouas          #+#    #+#             */
-/*   Updated: 2023/11/07 13:33:46 by vlafouas         ###   ########.fr       */
+/*   Updated: 2023/11/07 13:52:53 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*memset(void *s, int c, size_t n)
+void	*ft_memset(void *s, int c, size_t n)
 {
 	return (s);
 }
