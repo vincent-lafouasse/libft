@@ -6,34 +6,28 @@ it ain't much but it's honest work
 
 ### Libc
 
-- [ ] ft_memset
-- [ ] ft_bzero
+- [x] ft_memset
+- [x] ft_bzero
 - [ ] ft_memcpy
-- [ ] ft_memccpy
 - [ ] ft_memmove
 - [ ] ft_memchr
 - [ ] ft_memcmp
-- [ ] ft_strlen
+- [x] ft_strlen
 - [ ] ft_strdup
-- [ ] ft_strcpy
-- [ ] ft_strncpy
-- [ ] ft_strcat
-- [ ] ft_strncat
+- [ ] ft_strlcpy
 - [ ] ft_strlcat
 - [ ] ft_strchr
 - [ ] ft_strrchr
-- [ ] ft_strstr
 - [ ] ft_strnstr
-- [ ] ft_strcmp
 - [ ] ft_strncmp
-- [ ] ft_atoi
-- [ ] ft_isalpha
-- [ ] ft_isdigit
-- [ ] ft_isalnum
-- [ ] ft_isascii
-- [ ] ft_isprint
-- [ ] ft_toupper
-- [ ] ft_tolower
+- [x] ft_atoi
+- [x] ft_isalpha
+- [x] ft_isdigit
+- [x] ft_isalnum
+- [x] ft_isascii
+- [x] ft_isprint
+- [x] ft_toupper
+- [x] ft_tolower
 
 ### Extension
 
@@ -53,8 +47,6 @@ it ain't much but it's honest work
 - [ ] ft_strtrim
 - [ ] ft_strsplit
 - [ ] ft_itoa
-- [x] ft_putchar
-- [x] ft_putstr
 - [ ] ft_putendl
 - [ ] ft_putnbr
 - [ ] ft_putchar_fd
