@@ -18,54 +18,54 @@ extern "C"
 #include "libft.h"
 };
 
-#define LOWER_BOUND -30
-#define UPPER_BOUND 420
+#define LOWER_BOUND -1
+#define UPPER_BOUND 255
 
 void test_isupper(int c)
 {
-  EXPECT_EQ(ft_isupper(c), isupper(c))
+  EXPECT_EQ((bool)ft_isupper(c),(bool)isupper(c))
       << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
 void test_islower(int c)
 {
-  EXPECT_EQ(ft_islower(c), islower(c))
+  EXPECT_EQ((bool)ft_islower(c),(bool)islower(c))
       << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
 void test_isspace(int c)
 {
-  EXPECT_EQ(ft_isspace(c), isspace(c))
+  EXPECT_EQ((bool)ft_isspace(c),(bool)isspace(c))
       << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
 void test_isalpha(int c)
 {
-  EXPECT_EQ(ft_isalpha(c), isalpha(c))
+  EXPECT_EQ((bool)ft_isalpha(c),(bool)isalpha(c))
       << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
 void test_isdigit(int c)
 {
-  EXPECT_EQ(ft_isdigit(c), isdigit(c))
+  EXPECT_EQ((bool)ft_isdigit(c),(bool)isdigit(c))
       << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
 void test_isalnum(int c)
 {
-  EXPECT_EQ(ft_isalnum(c), isalnum(c))
+  EXPECT_EQ((bool)ft_isalnum(c),(bool)isalnum(c))
       << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
 void test_isascii(int c)
 {
-  EXPECT_EQ(ft_isascii(c), isascii(c))
+  EXPECT_EQ((bool)ft_isascii(c),(bool)isascii(c))
       << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
 void test_isprint(int c)
 {
-  EXPECT_EQ(ft_isprint(c), isprint(c))
+  EXPECT_EQ((bool)ft_isprint(c),(bool)isprint(c))
       << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
