@@ -6,12 +6,11 @@
 /*   By: vlafouas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:34:38 by vlafouas          #+#    #+#             */
-/*   Updated: 2023/11/07 14:02:19 by vlafouas         ###   ########.fr       */
+/*   Updated: 2023/11/07 14:33:57 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <gtest/gtest.h>
-#include <iostream>
 #include <stdlib.h>
 
 #define N_TESTS 420
@@ -42,7 +41,6 @@ void test_memset(int c, size_t n)
 
 	for (size_t i = 0; i < n; i++)
 	{
-		std::cout << rand() << '\n';
 		ASSERT_EQ(buffer[i], c) << "\t error found at index " << i;
 	}
 }
