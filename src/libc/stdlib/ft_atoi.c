@@ -12,12 +12,12 @@
 
 #include "libft.h"
 
-static unsigned int ft_stripped_to_unsigned(const char* num_str);
+static unsigned int	ft_stripped_to_unsigned(const char *num_str);
 
-int		ft_atoi(const char *num_str)
+int	ft_atoi(const char *num_str)
 {
-	unsigned int absolute_value;
-	char sign;
+	unsigned int	absolute_value;
+	char			sign;
 
 	absolute_value = 0;
 	sign = 1;
@@ -30,12 +30,12 @@ int		ft_atoi(const char *num_str)
 		sign = -1;
 		num_str++;
 	}
-	return sign * ft_stripped_to_unsigned(num_str);
+	return (sign * ft_stripped_to_unsigned(num_str));
 }
 
-static unsigned int ft_stripped_to_unsigned(const char* num_str)
+static unsigned int	ft_stripped_to_unsigned(const char *num_str)
 {
-	unsigned int output;
+	unsigned int	output;
 
 	output = 0;
 	while (ft_isdigit(*num_str))
@@ -43,5 +43,5 @@ static unsigned int ft_stripped_to_unsigned(const char* num_str)
 		output = 10 * output + (*num_str - '0');
 		num_str++;
 	}
-	return output;
+	return (output);
 }
