@@ -6,12 +6,15 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/11/07 14:50:29 by vlafouas         ###   ########.fr       */
+/*   Updated: 2023/11/07 15:01:05 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef LIBFT_H
+# define LIBFT_H
+
 /* only for the declarations of `size_t` and `NULL` */
-#include <stddef.h>
+# include <stddef.h>
 
 typedef unsigned char	t_byte;
 
@@ -43,3 +46,5 @@ void					ft_putchar(char c);
 void					ft_putstr(const char *s);
 void					ft_putendl(const char *s);
 void					ft_putnbr(int n);
+
+#endif /* LIBFT_H */
