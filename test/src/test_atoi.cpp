@@ -6,7 +6,7 @@
 /*   By: vlafouas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:03:16 by vlafouas          #+#    #+#             */
-/*   Updated: 2023/11/07 12:06:05 by vlafouas         ###   ########.fr       */
+/*   Updated: 2023/11/07 12:08:50 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,12 @@ void test_atoi(const char* s)
 	EXPECT_EQ(ft_atoi(s), atoi(s));
 }
 
-TEST(Stdlib, Atoi)
+TEST(Stdlib, AtoiValidInput)
 {
 	test_atoi("0");
 	test_atoi("1");
+	test_atoi("42");
+	test_atoi("-42");
+	test_atoi("              \t\n\t 42");
+	test_atoi("-1");
 }
