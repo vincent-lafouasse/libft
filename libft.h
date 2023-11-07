@@ -6,15 +6,16 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/09/05 15:04:01 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/07 13:12:01 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /* only for the declarations of `size_t` and `NULL` */
 #include <stddef.h>
 
-/* ----- string operations -------------------------------------------------- */
+/* ----- from `stdlib.h` ---------------------------------------------------- */
 int		ft_atoi(const char *num_str);
+void	*ft_calloc(size_t nmemb, size_t size);
 
 /* ----- character types (`ctype.h`) ---------------------------------------- */
 int		ft_isalpha(int c);
