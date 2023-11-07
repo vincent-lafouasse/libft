@@ -6,7 +6,7 @@
 /*   By: vlafouas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 12:03:16 by vlafouas          #+#    #+#             */
-/*   Updated: 2023/11/07 12:56:49 by vlafouas         ###   ########.fr       */
+/*   Updated: 2023/11/07 13:05:36 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ extern "C"
 
 void test_atoi(const char* s)
 {
-	EXPECT_EQ(ft_atoi(s), atoi(s));
+	EXPECT_EQ(ft_atoi(s), atoi(s)) << "\terror found with string " << s;
 }
 
 TEST(Stdlib, AtoiValidInput)
