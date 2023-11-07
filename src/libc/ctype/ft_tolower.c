@@ -6,7 +6,7 @@
 /*   By: vlafouas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 16:57:50 by vlafouas          #+#    #+#             */
-/*   Updated: 2023/11/07 16:57:58 by vlafouas         ###   ########.fr       */
+/*   Updated: 2023/11/07 17:05:11 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,7 @@
 
 int	ft_tolower(int c)
 {
-	return (0);
+	if (!ft_isupper(c))
+		return (c);
+	return (c + 32);
 }
