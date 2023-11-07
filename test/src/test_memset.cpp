@@ -6,7 +6,7 @@
 /*   By: vlafouas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:34:38 by vlafouas          #+#    #+#             */
-/*   Updated: 2023/11/07 14:47:40 by vlafouas         ###   ########.fr       */
+/*   Updated: 2023/11/07 14:59:43 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ struct MemsetInput
 
 void test_memset(int c, size_t n)
 {
-	unsigned char* my_buffer = (unsigned char*)malloc(n);
-	unsigned char* libc_buffer = (unsigned char*)malloc(n);
+	t_byte* my_buffer = (t_byte*)malloc(n);
+	t_byte* libc_buffer = (t_byte*)malloc(n);
 	ft_memset((void*)my_buffer, c, n);
 	memset((void*)libc_buffer, c, n);
 

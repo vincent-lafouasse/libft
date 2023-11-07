@@ -6,7 +6,7 @@
 /*   By: vlafouas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:12:21 by vlafouas          #+#    #+#             */
-/*   Updated: 2023/11/07 13:27:28 by vlafouas         ###   ########.fr       */
+/*   Updated: 2023/11/07 14:58:36 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t			n_bytes;
-	unsigned char	*output;
-	size_t			i;
+	size_t	n_bytes;
+	t_byte	*output;
+	size_t	i;
 
 	n_bytes = nmemb * size;
 	output = malloc(n_bytes);
