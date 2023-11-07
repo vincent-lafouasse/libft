@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/11/07 16:09:22 by vlafouas         ###   ########.fr       */
+/*   Updated: 2023/11/07 16:17:47 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void					*ft_calloc(size_t nmemb, size_t size);
 
 /* ----- from `string.h` ---------------------------------------------------- */
 void					*ft_memset(void *s, int c, size_t n);
+size_t					ft_strlen(const char *s);
 
 /* ----- from `strings.h` --------------------------------------------------- */
 void					ft_bzero(void *s, size_t n);
