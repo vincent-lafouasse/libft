@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/11/07 13:12:01 by vlafouas         ###   ########.fr       */
+/*   Updated: 2023/11/07 13:33:08 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 /* ----- from `stdlib.h` ---------------------------------------------------- */
 int		ft_atoi(const char *num_str);
 void	*ft_calloc(size_t nmemb, size_t size);
+
+/* ----- from `string.h` ---------------------------------------------------- */
+void	*memset(void *s, int c, size_t n);
 
 /* ----- character types (`ctype.h`) ---------------------------------------- */
 int		ft_isalpha(int c);
