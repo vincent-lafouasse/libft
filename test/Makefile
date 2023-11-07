@@ -13,11 +13,13 @@ OBJS  := $(SRCS:%=$(BUILD_DIR)/%.o)
 LDLIBS   = -lgtest -lgtest_main -lpthread
 LDLIBS  += -lft
 LDFLAGS += -L..
+LDFLAGS += -Lgtest
 
 CFLAGS  = -Wall -Wextra -Werror
 CFLAGS += -pedantic
 CFLAGS += -g3
 CFLAGS += -I..
+CFLAGS += -Iinclude
 
 CXXFLAGS  = $(CFLAGS) 
 CXXFLAGS += -std=c++17
