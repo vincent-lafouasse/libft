@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/27 21:24:35 by poss              #+#    #+#             */
-/*   Updated: 2023/08/28 12:07:37 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/07 17:03:08 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,24 +69,16 @@ void test_isprint(int c)
       << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
-// Poss extension ----------------------
-
-TEST(Ctype, IsUpper)
+void test_tolower(int c)
 {
-  for (int c = LOWER_BOUND; c < UPPER_BOUND; c++)
-    test_isupper(c);
+  EXPECT_EQ((bool)ft_tolower(c),(bool)tolower(c))
+      << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
-TEST(Ctype, IsLower)
+void test_toupper(int c)
 {
-  for (int c = LOWER_BOUND; c < UPPER_BOUND; c++)
-    test_islower(c);
-}
-
-TEST(Ctype, IsSpace)
-{
-  for (int c = LOWER_BOUND; c < UPPER_BOUND; c++)
-    test_isspace(c);
+  EXPECT_EQ((bool)ft_toupper(c),(bool)toupper(c))
+      << "\terror found with the character " << char(c) << " i.e. ASCII " << c;
 }
 
 // Libc functions -----------------------------------------
@@ -119,4 +111,36 @@ TEST(Ctype, IsPrint)
 {
   for (int c = LOWER_BOUND; c < UPPER_BOUND; c++)
     test_isprint(c);
+}
+
+TEST(Ctype, ToUpper)
+{
+  for (int c = LOWER_BOUND; c < UPPER_BOUND; c++)
+    test_toupper(c);
+}
+
+TEST(Ctype, ToLower)
+{
+  for (int c = LOWER_BOUND; c < UPPER_BOUND; c++)
+    test_tolower(c);
+}
+
+// Poss extension ----------------------
+
+TEST(Ctype, IsUpper)
+{
+  for (int c = LOWER_BOUND; c < UPPER_BOUND; c++)
+    test_isupper(c);
+}
+
+TEST(Ctype, IsLower)
+{
+  for (int c = LOWER_BOUND; c < UPPER_BOUND; c++)
+    test_islower(c);
+}
+
+TEST(Ctype, IsSpace)
+{
+  for (int c = LOWER_BOUND; c < UPPER_BOUND; c++)
+    test_isspace(c);
 }
