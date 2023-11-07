@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_atoi.cpp                                      :+:      :+:    :+:   */
+/*   test_calloc.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vlafouas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/07 12:03:16 by vlafouas          #+#    #+#             */
-/*   Updated: 2023/11/07 13:22:28 by vlafouas         ###   ########.fr       */
+/*   Created: 2023/11/07 13:22:10 by vlafouas          #+#    #+#             */
+/*   Updated: 2023/11/07 13:25:41 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <gtest/gtest.h>
-
-#include <stdlib.h>
 
 extern "C"
 {
 #include "libft.h"
 };
 
-void test_atoi(const char* s)
+void test_calloc(size_t nmemb, size_t size)
 {
-	EXPECT_EQ(ft_atoi(s), atoi(s)) << "\terror found with string " << s;
+	unsigned char* buffer = (unsigned char*)ft_calloc(nmemb, size);
+	size_t n_bytes = nmemb * size;
+
+	for (size_t i = 0; i < n_bytes; i++)
+	{
+		EXPECT_EQ(buffer[i], 0) << "\t found non-zero element at index " << i;
+	}
+	free(buffer);
 }
 
-TEST(Stdlib, AtoiValidInput)
+TEST(Stdlib, Calloc)
 {
-	test_atoi("0");
-	test_atoi("1");
-	test_atoi("42");
-	test_atoi("-42");
-	test_atoi("              \t\n\t 42");
-	test_atoi("-1");
-}
-
-TEST(Stdlib, AtoiInvalidInput)
-{
-	test_atoi("yo yoyo what uppppp");
-	test_atoi("42 c'est pas mal en fait");
-	test_atoi("0xcafe");
-	test_atoi("--------42");
+	test_calloc(1, 1);
 }
