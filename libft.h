@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/11/07 16:17:47 by vlafouas         ###   ########.fr       */
+/*   Updated: 2023/11/07 16:56:37 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int						ft_isdigit(int c);
 int						ft_isalnum(int c);
 int						ft_isascii(int c);
 int						ft_isprint(int c);
+int						ft_toupper(int c);
+int						ft_tolower(int c);
 
 int						ft_isupper(int c);
 int						ft_islower(int c);
