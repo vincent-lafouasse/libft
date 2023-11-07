@@ -6,14 +6,16 @@
 /*   By: vlafouas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:34:38 by vlafouas          #+#    #+#             */
-/*   Updated: 2023/11/07 14:33:57 by vlafouas         ###   ########.fr       */
+/*   Updated: 2023/11/07 14:47:40 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <gtest/gtest.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define N_TESTS 420
+#define MAX_SIZE 10000
 
 extern "C"
 {
@@ -28,21 +30,25 @@ struct MemsetInput
 	void set_random() {
 		int is_positive = rand() % 2;
 		int sign = 1 * is_positive + (-1) * (!is_positive);
-		value = rand() % 100000;
+		value = rand();
 		value *= sign;
-		n_bytes = 1 + rand() % 10000;
+		n_bytes = 1 + rand() % MAX_SIZE;
 	}
 };
 
 void test_memset(int c, size_t n)
 {
-	unsigned char* buffer = (unsigned char*)malloc(n);
-	ft_memset((void*)buffer, c, n);
+	unsigned char* my_buffer = (unsigned char*)malloc(n);
+	unsigned char* libc_buffer = (unsigned char*)malloc(n);
+	ft_memset((void*)my_buffer, c, n);
+	memset((void*)libc_buffer, c, n);
 
 	for (size_t i = 0; i < n; i++)
 	{
-		ASSERT_EQ(buffer[i], c) << "\t error found at index " << i;
+		ASSERT_EQ(my_buffer[i], libc_buffer[i]) << "\t error found at index " << i;
 	}
+	free(my_buffer);
+	free(libc_buffer);
 }
 
 TEST(String, Memset)
