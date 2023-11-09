@@ -29,21 +29,26 @@ test: clean run
 
 .PHONY: run
 run: build
-	./$(BUILD_DIR)/$(EXEC)
+	@echo
+	@echo =============== TEST OUTPUT =============================================
+	@./$(BUILD_DIR)/$(EXEC)
 
 .PHONY: build
 build: $(BUILD_DIR)/$(EXEC)
 
 # Linking
 $(BUILD_DIR)/$(EXEC): $(OBJS)
-	make -C ..
-	$(CC) $^ -o $@ $(LDFLAGS) $(LIBS)
+	@make -C ..
+	@echo Linking Test Binary
+	@$(CC) $^ -o $@ $(LDFLAGS) $(LIBS)
 
 # Compile C 
 $(BUILD_DIR)/%.c.o: %.c
-	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@echo Compile $<
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: clean
 clean:
-	$(RM) -r $(BUILD_DIR)
+	@echo Cleanup tests
+	@$(RM) -r $(BUILD_DIR)
