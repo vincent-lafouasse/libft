@@ -2,7 +2,6 @@
 
 #include "test-framework/unity.h"
 
-#define _XOPEN_SOURCE
 #include <ctype.h>
 #include <stdio.h>
 #include <stdbool.h>
@@ -11,8 +10,6 @@
 
 #define LOWER_BOUND -1
 #define UPPER_BOUND 255
-
-#define TEST_ISASCII 1
 
 void compare(int (*my_ft)(int), int (*libc_ft)(int), int c)
 {
@@ -65,7 +62,6 @@ void test_isdigit(void)
         compare_bool(my_ft, libc_ft, c);
 }
 
-#if TEST_ISASCII
 void test_isascii(void)
 {
     int (*my_ft)(int) = &ft_isascii;
@@ -74,7 +70,6 @@ void test_isascii(void)
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
         compare_bool(my_ft, libc_ft, c);
 }
-#endif
 
 void test_isprint(void)
 {
@@ -142,7 +137,5 @@ void run_test_ctype(void)
     RUN_TEST(test_isspace);
     RUN_TEST(test_toupper);
     RUN_TEST(test_tolower);
-#if TEST_ISASCII
     RUN_TEST(test_isascii);
-#endif
 }
