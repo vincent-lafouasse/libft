@@ -1,5 +1,7 @@
 # Libft -- my own library
 
+![makefile workflow](https://github.com/vincent-lafouasse/libft/actions/workflows/makefile.yml/badge.svg)
+
 it ain't much but it's honest work
 
 ## List of functions
