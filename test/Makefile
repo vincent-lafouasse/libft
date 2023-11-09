@@ -1,69 +1,49 @@
 EXEC = tests.out
 
-CC  = clang
-CXX = clang++
-
 BUILD_DIR = ./build
-SRC_DIR   = ./src
+SRC_DIR = ./src
 
-SRCS  := $(shell find $(SRC_DIR) -name '*.c' -or -name '*.cpp')
-SRCS_H = $(SRCS) $(shell find $(SRC_DIR) -name '*.h')
-OBJS  := $(SRCS:%=$(BUILD_DIR)/%.o)
+SRCS := $(shell find $(SRC_DIR) -name '*.c')
+OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
 
-LDLIBS   = -lgtest -lgtest_main -lpthread
-LDLIBS  += -lft
-LDFLAGS += -L..
-LDFLAGS += -Lgtest
+LIBS = -lft
+LDFLAGS = -L..
 
-CFLAGS  = -Wall -Wextra -Werror
-CFLAGS += -pedantic
-CFLAGS += -g3
-CFLAGS += -I..
-CFLAGS += -Iinclude
+INC_DIRS = ./src/test-framework
+INC_DIRS += ./include
+INC_DIRS += ..
+INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
-CXXFLAGS  = $(CFLAGS) 
-CXXFLAGS += -std=c++17
+###
+CFLAGS  = -std=c99
+CFLAGS += -g
+CFLAGS += -Wall -Wextra
+#CFLAGS += -Werror
+CFLAGS += $(INC_FLAGS)
 
-GTESTFLAGS = --gtest_color=yes --gtest_print_time=0
-GTESTFLAGS += --gtest_break_on_failure
+CFLAGS += -DUNITY_SUPPORT_64 -DUNITY_OUTPUT_COLOR
+
 
 .PHONY: test
-test: fullclean $(BUILD_DIR)/$(EXEC)
-	@echo
-	@python3 -c 'print("-" * 80)'
-	@echo TEST OUTPUT
-	@python3 -c 'print("-" * 80)'
-	@echo
-	@$(BUILD_DIR)/$(EXEC) $(GTESTFLAGS)
+test: clean run
+
+.PHONY: run
+run: build
+	./$(BUILD_DIR)/$(EXEC)
+
+.PHONY: build
+build: $(BUILD_DIR)/$(EXEC)
 
 # Linking
 $(BUILD_DIR)/$(EXEC): $(OBJS)
-	@make -s -C ..
-	@echo Linking test binary
-	@$(CXX) $^ -o $@ $(LDFLAGS) $(LDLIBS)
+	make -C ..
+	$(CC) $^ -o $@ $(LDFLAGS) $(LIBS)
 
 # Compile C 
 $(BUILD_DIR)/%.c.o: %.c
-	@echo Compiling $<
-	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -c $< -o $@
-
-# Compile CXX
-$(BUILD_DIR)/%.cpp.o: %.cpp
-	@echo Compiling $<
-	@mkdir -p $(dir $@)
-	@$(CXX) $(CXXFLAGS) -c $< -o $@
+	mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
 
 .PHONY: clean
 clean:
-	@echo Cleaning up test
-	@$(RM) -r $(BUILD_DIR)
-
-.PHONY: fullclean
-fullclean: clean
-	make -C .. fclean
-
-.PHONY: fmt
-fmt:
-	@echo Formatting tests
-	@clang-format -i $(SRCS)
+	$(RM) -r $(BUILD_DIR)
