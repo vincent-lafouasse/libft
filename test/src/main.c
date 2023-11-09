@@ -13,12 +13,12 @@ void	tearDown(void)
 
 void	test_atoi(void);
 void	test_2(void);
+void run_module_1(void);
 
 int	main(void)
 {
 	UnityBegin("Libft");
-	printf("\nModule 1\n");
-	RUN_TEST(test_atoi);
+	run_module_1();
 	printf("\nModule 2\n");
 	RUN_TEST(test_2);
 	return (UnityEnd());
