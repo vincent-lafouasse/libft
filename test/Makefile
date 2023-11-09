@@ -57,3 +57,11 @@ clean:
 format:
 	clang-format -i $(shell find $(SRC_DIR) -name '*.c' | grep -v unity)
 	clang-format -i $(shell find $(SRC_DIR) -name '*.h' | grep -v unity)
+
+.PHONY: t r b f c
+t: test
+r: run
+b: build
+f: format
+c: clean
+
