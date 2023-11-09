@@ -52,3 +52,8 @@ $(BUILD_DIR)/%.c.o: %.c
 clean:
 	@echo Cleanup tests
 	@$(RM) -r $(BUILD_DIR)
+
+.PHONY: format
+format:
+	clang-format -i $(shell find $(SRC_DIR) -name '*.c' | grep -v unity)
+	clang-format -i $(shell find $(SRC_DIR) -name '*.h' | grep -v unity)

@@ -6,10 +6,10 @@
 
 void scramble_array(void* array, size_t size)
 {
-	t_byte* bytes = (t_byte*) array;
+    t_byte* bytes = (t_byte*)array;
 
-	for (size_t i = 0; i < size; i++)
-	{
-		bytes[i] = rand();
-	}
+    for (size_t i = 0; i < size; i++)
+    {
+        bytes[i] = rand();
+    }
 }
