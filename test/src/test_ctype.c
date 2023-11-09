@@ -2,6 +2,7 @@
 
 #include "test-framework/unity.h"
 
+#define _DEFAULT_SOURCE
 #include <ctype.h>
 #include <stdio.h>
 #include <stdbool.h>
@@ -11,7 +12,7 @@
 #define LOWER_BOUND -1
 #define UPPER_BOUND 255
 
-#define TEST_ISASCII 0
+#define TEST_ISASCII 1
 
 void compare(int (*my_ft)(int), int (*libc_ft)(int), int c)
 {
