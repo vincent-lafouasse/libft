@@ -4,6 +4,7 @@
 
 #include <ctype.h>
 #include <stdio.h>
+#include <stdbool.h>
 
 #define BUFFER_SIZE 1024
 
@@ -24,13 +25,25 @@ void compare(int (*my_ft)(int), int (*libc_ft)(int), int c)
     TEST_ASSERT_TRUE_MESSAGE(expected == actual, error);
 }
 
+void compare_bool(int (*my_ft)(int), int (*libc_ft)(int), int c)
+{
+    bool expected = (*libc_ft)(c);
+    bool actual = (*my_ft)(c);
+
+    char error[BUFFER_SIZE];
+    sprintf(error, "Error for input %c, ie ASCII %d, expected %d was %d", c, c,
+            expected, actual);
+
+    TEST_ASSERT_TRUE_MESSAGE(expected == actual, error);
+}
+
 void test_islower(void)
 {
     int (*my_ft)(int) = &ft_islower;
     int (*libc_ft)(int) = &islower;
 
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare(my_ft, libc_ft, c);
+        compare_bool(my_ft, libc_ft, c);
 }
 
 void test_isupper(void)
@@ -39,7 +52,7 @@ void test_isupper(void)
     int (*libc_ft)(int) = &isupper;
 
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare(my_ft, libc_ft, c);
+        compare_bool(my_ft, libc_ft, c);
 }
 
 void test_isdigit(void)
@@ -48,7 +61,7 @@ void test_isdigit(void)
     int (*libc_ft)(int) = &isdigit;
 
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare(my_ft, libc_ft, c);
+        compare_bool(my_ft, libc_ft, c);
 }
 
 #if TEST_ISASCII
@@ -58,7 +71,7 @@ void test_isascii(void)
     int (*libc_ft)(int) = &isascii;
 
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare(my_ft, libc_ft, c);
+        compare_bool(my_ft, libc_ft, c);
 }
 #endif
 
@@ -68,7 +81,7 @@ void test_isprint(void)
     int (*libc_ft)(int) = &isprint;
 
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare(my_ft, libc_ft, c);
+        compare_bool(my_ft, libc_ft, c);
 }
 
 void test_isalpha(void)
@@ -77,7 +90,7 @@ void test_isalpha(void)
     int (*libc_ft)(int) = &isalpha;
 
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare(my_ft, libc_ft, c);
+        compare_bool(my_ft, libc_ft, c);
 }
 
 void test_isalnum(void)
@@ -86,7 +99,7 @@ void test_isalnum(void)
     int (*libc_ft)(int) = &isalnum;
 
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare(my_ft, libc_ft, c);
+        compare_bool(my_ft, libc_ft, c);
 }
 
 void test_isspace(void)
@@ -95,7 +108,7 @@ void test_isspace(void)
     int (*libc_ft)(int) = &isspace;
 
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare(my_ft, libc_ft, c);
+        compare_bool(my_ft, libc_ft, c);
 }
 
 void test_toupper(void)
