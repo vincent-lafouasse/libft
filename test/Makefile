@@ -25,11 +25,18 @@ CFLAGS += -DUNITY_SUPPORT_64 -DUNITY_OUTPUT_COLOR
 
 
 .PHONY: test
-test: $(BUILD_DIR)/$(EXEC)
-	@./$<
+test: clean run
+
+.PHONY: run
+run: build
+	./$(BUILD_DIR)/$(EXEC)
+
+.PHONY: build
+build: $(BUILD_DIR)/$(EXEC)
 
 # Linking
 $(BUILD_DIR)/$(EXEC): $(OBJS)
+	make -C ..
 	$(CC) $^ -o $@ $(LDFLAGS) $(LIBS)
 
 # Compile C 
