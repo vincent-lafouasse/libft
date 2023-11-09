@@ -17,10 +17,6 @@ void try_bzero(size_t size)
     if (size == 0)
         TEST_PASS();
 
-    char error[BUFFER_SIZE];
-    t_byte expected;
-    t_byte actual;
-
     t_byte* bytes = malloc(size);
     scramble_array(bytes, size);
 
@@ -28,11 +24,12 @@ void try_bzero(size_t size)
 
     for (size_t i = 0; i < size; i++)
     {
-        expected = 0;
-        actual = bytes[i];
+        t_byte expected = 0;
+        t_byte actual = bytes[i];
 
         if (expected != actual)
         {
+			char error[BUFFER_SIZE];
             sprintf(error, "Error at byte %zu, expected 0x%02x was 0x%02x", i,
                     expected, actual);
             TEST_FAIL_MESSAGE(error);

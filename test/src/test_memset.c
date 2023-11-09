@@ -23,10 +23,6 @@ void try_memset(Input in)
     if (in.size == 0)
         TEST_PASS();
 
-    char error[BUFFER_SIZE];
-    t_byte expected;
-    t_byte actual;
-
     t_byte* bytes = malloc(in.size);
     scramble_array(bytes, in.size);
 
@@ -34,11 +30,12 @@ void try_memset(Input in)
 
     for (size_t i = 0; i < in.size; i++)
     {
-        expected = in.value;
-        actual = bytes[i];
+        t_byte expected = in.value;
+        t_byte actual = bytes[i];
 
         if (expected != actual)
         {
+			char error[BUFFER_SIZE];
             sprintf(error, "Error at byte %zu, expected 0x%02x was 0x%02x", i,
                     expected, actual);
             TEST_FAIL_MESSAGE(error);
