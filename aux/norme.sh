@@ -10,7 +10,7 @@ function norm {
 }
 
 SRC_DIR='./src'
-H_DIR='.'
+H_DIR='./include'
 
 C_FILES=$(find $SRC_DIR -name '*.c')
 H_FILES=$(find $H_DIR -name '*.h')
