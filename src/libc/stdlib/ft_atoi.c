@@ -6,7 +6,7 @@
 /*   By: vlafouas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:36:35 by vlafouas          #+#    #+#             */
-/*   Updated: 2023/11/07 13:06:24 by vlafouas         ###   ########.fr       */
+/*   Updated: 2023/11/09 20:28:46 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@ static unsigned int	ft_stripped_to_unsigned(const char *num_str);
 
 int	ft_atoi(const char *num_str)
 {
-	unsigned int	absolute_value;
 	char			sign;
 
-	absolute_value = 0;
 	sign = 1;
 	while (ft_isspace(*num_str))
 	{
