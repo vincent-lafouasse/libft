@@ -37,7 +37,7 @@ void try_memset(Input in)
 	t_byte* bytes = malloc(in.size);
 	scramble_array(bytes, in.size);
 
-	memset(bytes, in.value, in.size);
+	ft_memset(bytes, in.value, in.size);
 
 	for (size_t i = 0; i < in.size; i++)
 	{
