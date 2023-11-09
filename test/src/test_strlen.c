@@ -5,15 +5,20 @@
 #include <string.h>
 #include <stdio.h>
 
+#define BUFFER_SIZE 1024
+
 void compare_strlen(const char* s)
 {
-	TEST_ASSERT_TRUE_MESSAGE(strlen(s) == ft_strlen(s), s);
+	char error[BUFFER_SIZE];
+	sprintf(error, "Error for input \"%s\"", s);
+
+	TEST_ASSERT_TRUE_MESSAGE(strlen(s) == ft_strlen(s), error);
 }
 
 void test_strlen(void)
 {
-	compare_strlen("");
 	compare_strlen("SOME");
+	compare_strlen("");
 	compare_strlen("body once told me the world is gonna roll me");
 	compare_strlen("I ain't the sharpest tool in the shed");
 	compare_strlen("She was looking kind of dumb with her finger and her thumb");
