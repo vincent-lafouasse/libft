@@ -30,6 +30,6 @@ void test_strlen(void)
 
 void run_test_strlen(void)
 {
-	printf("\nStrlen\n");
+	printf("\n----- Strlen -----\n");
 	RUN_TEST(test_strlen);
 }
