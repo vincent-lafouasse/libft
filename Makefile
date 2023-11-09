@@ -3,7 +3,7 @@ LIB = libft.a
 CC = clang
 
 SRC_DIR   = ./src
-INC_DIR   = .
+INC_DIR   = ./include
 BUILD_DIR = ./build
 
 LIB_H = $(INC_DIR)/libft.h

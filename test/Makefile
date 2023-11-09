@@ -11,7 +11,7 @@ LDFLAGS = -L..
 
 INC_DIRS = ./src/test-framework
 INC_DIRS += ./include
-INC_DIRS += ..
+INC_DIRS += ../include
 INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
 ###
