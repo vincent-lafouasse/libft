@@ -50,6 +50,7 @@ void try_memset(Input in)
 			TEST_FAIL_MESSAGE(error);
 		}
 	}
+	free(bytes);
 }
 
 Input get_random_input()
