@@ -9,7 +9,6 @@
 #include <string.h>
 
 #define BUFFER_SIZE 1024
-#define MAX_SIZE 1024
 #define N_TRIALS 420
 
 void try_bzero(size_t size)
@@ -29,7 +28,7 @@ void try_bzero(size_t size)
 
         if (expected != actual)
         {
-			char error[BUFFER_SIZE];
+            char error[BUFFER_SIZE];
             sprintf(error, "Error at byte %zu, expected 0x%02x was 0x%02x", i,
                     expected, actual);
             TEST_FAIL_MESSAGE(error);
@@ -37,11 +36,6 @@ void try_bzero(size_t size)
     }
 
     free(bytes);
-}
-
-size_t random_size()
-{
-    return rand() % MAX_SIZE;
 }
 
 void test_stochastic_bzero(void)
