@@ -2,8 +2,6 @@
 #include "test-framework/unity.h"
 
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
 void	setUp(void)
 {
@@ -13,14 +11,15 @@ void	tearDown(void)
 {
 }
 
-static void	test_atoi(void)
-{
-	TEST_ASSERT_EQUAL_INT(42, ft_atoi("42"));
-}
+void	test_atoi(void);
+void	test_2(void);
 
 int	main(void)
 {
-	UnityBegin("test.c");
+	UnityBegin("Libft");
+	printf("\nModule 1\n");
 	RUN_TEST(test_atoi);
+	printf("\nModule 2\n");
+	RUN_TEST(test_2);
 	return (UnityEnd());
 }
