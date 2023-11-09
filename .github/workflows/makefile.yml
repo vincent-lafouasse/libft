@@ -17,6 +17,9 @@ jobs:
     - name: install cppcheck
       run: sudo apt-get update && sudo apt-get -y install cppcheck
 
+    - name : install norminette
+      run: python3 -m pip install --upgrade pip setuptools && python3 -m pip install norminette
+
     - name: Build
       run: make
 
