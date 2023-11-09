@@ -9,28 +9,21 @@
 #include <string.h>
 
 #define BUFFER_SIZE 1024
-#define MAX_SIZE 1024
 #define N_TRIALS 420
 
-typedef struct
+void try_memset(int value, size_t size)
 {
-    int value;
-    size_t size;
-} Input;
-
-void try_memset(Input in)
-{
-    if (in.size == 0)
+    if (size == 0)
         TEST_PASS();
 
-    t_byte* bytes = malloc(in.size);
-    scramble_array(bytes, in.size);
+    t_byte* bytes = malloc(size);
+    scramble_array(bytes, size);
 
-    ft_memset(bytes, in.value, in.size);
+    ft_memset(bytes, value, size);
 
-    for (size_t i = 0; i < in.size; i++)
+    for (size_t i = 0; i < size; i++)
     {
-        t_byte expected = in.value;
+        t_byte expected = value;
         t_byte actual = bytes[i];
 
         if (expected != actual)
@@ -44,34 +37,16 @@ void try_memset(Input in)
     free(bytes);
 }
 
-Input get_random_input()
-{
-    Input in;
-
-    in.value = rand();
-    in.size = 1 + rand() % MAX_SIZE;
-    return in;
-}
-
-Input input(int value, size_t size)
-{
-    Input in;
-
-    in.value = value;
-    in.size = size;
-    return in;
-}
-
 void test_memset(void)
 {
-    try_memset(input(0, 0));
-    try_memset(input(69, 420));
+    try_memset(0, 0);
+    try_memset(69, 420);
 }
 
 void test_stochastic_memset(void)
 {
     for (int i = 0; i < N_TRIALS; i++)
-        try_memset(get_random_input());
+        try_memset(random_int(), random_size());
 }
 
 void run_test_memset(void)
