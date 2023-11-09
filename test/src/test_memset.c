@@ -35,7 +35,7 @@ void try_memset(Input in)
 
         if (expected != actual)
         {
-			char error[BUFFER_SIZE];
+            char error[BUFFER_SIZE];
             sprintf(error, "Error at byte %zu, expected 0x%02x was 0x%02x", i,
                     expected, actual);
             TEST_FAIL_MESSAGE(error);

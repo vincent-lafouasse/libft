@@ -3,8 +3,8 @@
 #include "test-framework/unity.h"
 
 #include <ctype.h>
-#include <stdio.h>
 #include <stdbool.h>
+#include <stdio.h>
 
 #define BUFFER_SIZE 1024
 
