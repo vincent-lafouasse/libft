@@ -15,7 +15,7 @@ void compare_strlen(const char* s)
 	char error[BUFFER_SIZE];
 	sprintf(error, "Error for input \"%s\", expected %d was %d", s, expected, actual);
 
-	TEST_ASSERT_TRUE_MESSAGE(strlen(s) == ft_strlen(s), error);
+	TEST_ASSERT_TRUE_MESSAGE(expected == actual, error);
 }
 
 void test_strlen(void)
