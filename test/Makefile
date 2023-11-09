@@ -58,6 +58,13 @@ format:
 	clang-format -i $(shell find $(SRC_DIR) -name '*.c' | grep -v unity)
 	clang-format -i $(shell find $(SRC_DIR) -name '*.h' | grep -v unity)
 
+# LSP stuff, don't worry about it
+.PHONY: update
+update:
+	make clean
+	mkdir -p $(BUILD_DIR)
+	bear --output $(BUILD_DIR)/compile_commands.json -- make build
+
 .PHONY: t r b f c
 t: test
 r: run
