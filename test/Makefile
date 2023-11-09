@@ -14,7 +14,7 @@ INC_DIRS += ./include
 INC_DIRS += ../include
 INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
-###
+CC = clang
 CFLAGS  = -std=c99
 CFLAGS += -g
 CFLAGS += -Wall -Wextra
