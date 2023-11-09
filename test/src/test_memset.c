@@ -2,6 +2,8 @@
 
 #include "test-framework/unity.h"
 
+#include "utils.h"
+
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -9,16 +11,6 @@
 #define BUFFER_SIZE 1024
 #define MAX_SIZE 1024
 #define N_TRIALS 420
-
-void scramble_array(void* array, size_t size)
-{
-	t_byte* bytes = (t_byte*) array;
-
-	for (size_t i = 0; i < size; i++)
-	{
-		bytes[i] = rand();
-	}
-}
 
 typedef struct {
 	int value;
