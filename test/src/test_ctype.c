@@ -2,7 +2,7 @@
 
 #include "test-framework/unity.h"
 
-#define _DEFAULT_SOURCE
+#define __XOPEN_SOURCE
 #include <ctype.h>
 #include <stdio.h>
 #include <stdbool.h>
