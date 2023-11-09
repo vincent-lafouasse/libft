@@ -10,6 +10,8 @@
 #define LOWER_BOUND -1
 #define UPPER_BOUND 255
 
+#define __BSD_VISIBLE 1
+
 void compare(int (*my_ft)(int), int (*libc_ft)(int), int c)
 {
     int expected = (*libc_ft)(c);
