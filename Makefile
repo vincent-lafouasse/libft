@@ -24,6 +24,7 @@ build: $(LIB)
 $(LIB): $(OBJS) $(LIB_H)
 	@echo Building libft
 	@ar rcs $(LIB) $(OBJS)
+	@printf "$(GREEN)===============BUILD COMPLETED===============$(NC)\n"
 
 $(BUILD_DIR)/%.c.o: %.c $(LIB_H)
 	@echo Compiling $<
@@ -57,6 +58,7 @@ fmt:
 check: re
 	@cppcheck --language=c $(C_FILES)
 	@cppcheck --language=c $(LIB_H)
+	@printf "$(GREEN)===============CPPCHECK OK===============$(NC)\n"
 	@echo
 	@python3 -c 'print("-" * 80)'
 	@echo SAINTE NORMINETTE SOIS CLEMENTE
@@ -65,6 +67,7 @@ check: re
 	@norminette $(C_FILES)
 	@echo
 	@norminette $(LIB_H)
+	@printf "$(GREEN)===============NORME OK===============$(NC)\n"
 
 # LSP stuff, don't worry about it
 .PHONY: update
@@ -81,3 +84,5 @@ c: clean
 u: update
 t: test
 
+GREEN = \033[0;32m
+NC = \033[0m
