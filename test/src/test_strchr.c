@@ -2,11 +2,46 @@
 
 #include "test-framework/unity.h"
 
+#include <stdio.h>
 #include <string.h>
 
-void test_strchr(void) {}
+#define BUFFER_SIZE 1024
 
-void test_strrchr(void) {}
+static void compare(char* (*myft)(const char*, int),
+                    char* (*libcft)(const char*, int),
+                    const char* s,
+                    int c)
+{
+    char* expected = (*libcft)(s, c);
+    char* actual = (*myft)(s, c);
+    char error[BUFFER_SIZE];
+
+    sprintf(error,
+            "Error found with input \"%s\" and %c, expected was \"%s\", actual "
+            "was \"%s\"",
+            s, c, expected, actual);
+    TEST_ASSERT_TRUE_MESSAGE(expected == actual, error);
+}
+
+static void compare_strchr(const char* s, int c)
+{
+    compare(&ft_strchr, &strchr, s, c);
+}
+
+static void compare_strrchr(const char* s, int c)
+{
+    compare(&ft_strrchr, &strrchr, s, c);
+}
+
+static void test_strchr(void)
+{
+    compare_strchr("Hello what is up", 'H');
+}
+
+static void test_strrchr(void)
+{
+    compare_strrchr("Hello what is up", 'H');
+}
 
 void run_test_strchr(void)
 {
