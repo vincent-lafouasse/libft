@@ -9,14 +9,17 @@
 
 void compare_bytes(t_byte* expected_array, t_byte* actual_array, size_t size)
 {
+    t_byte expected;
+    t_byte actual;
+    char error[BUFFER_SIZE];
+
     for (size_t i = 0; i < size; i++)
     {
-        t_byte expected = expected_array[i];
-        t_byte actual = actual_array[i];
+        expected = expected_array[i];
+        actual = actual_array[i];
 
         if (expected != actual)
         {
-            char error[BUFFER_SIZE];
             sprintf(error, "Error at byte %zu, expected 0x%02x was 0x%02x", i,
                     expected, actual);
             TEST_FAIL_MESSAGE(error);
