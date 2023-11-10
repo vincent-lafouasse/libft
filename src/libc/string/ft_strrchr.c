@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:37:20 by poss              #+#    #+#             */
-/*   Updated: 2023/11/10 14:54:21 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/10 16:46:07 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,16 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	(void)s;
-	(void)c;
-	return (0);
+	int	i;
+
+	i = ft_strlen(s);
+	while (i >= 0)
+	{
+		if (s[i] == c)
+		{
+			return ((char *)s + i);
+		}
+		i--;
+	}
+	return (NULL);
 }

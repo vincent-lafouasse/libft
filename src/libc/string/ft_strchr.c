@@ -6,13 +6,21 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/11/10 14:54:10 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/10 16:41:27 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strchr(const char *s, int c)
 {
-	(void)s;
-	(void)c;
-	return (0);
+	while (*s)
+	{
+		if (*s == c)
+		{
+			return ((char *)s);
+		}
+		s++;
+	}
+	return (NULL);
 }
