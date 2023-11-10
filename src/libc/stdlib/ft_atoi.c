@@ -6,7 +6,7 @@
 /*   By: vlafouas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 11:36:35 by vlafouas          #+#    #+#             */
-/*   Updated: 2023/11/09 20:28:46 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/10 17:03:12 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ int	ft_atoi(const char *num_str)
 	if (*num_str == '-')
 	{
 		sign = -1;
+		num_str++;
+	}
+	else if (*num_str == '+')
+	{
 		num_str++;
 	}
 	return (sign * ft_stripped_to_unsigned(num_str));
