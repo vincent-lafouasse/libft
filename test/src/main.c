@@ -13,6 +13,7 @@ void run_test_atoi(void);
 void run_test_memset(void);
 void run_test_bzero(void);
 void run_test_strchr(void);
+void run_test_calloc(void);
 
 int main(void)
 {
@@ -22,6 +23,7 @@ int main(void)
     run_test_atoi();
     run_test_memset();
     run_test_bzero();
+    run_test_calloc();
     run_test_strchr();
     return (UnityEnd());
 }
