@@ -16,26 +16,18 @@ static void try_bzero(size_t size)
     if (size == 0)
         TEST_PASS();
 
-    t_byte* bytes = malloc(size);
-    scramble_array(bytes, size);
+    t_byte* actual = malloc(size);
+    scramble_array(actual, size);
+    ft_bzero(actual, size);
 
-    ft_bzero(bytes, size);
+    t_byte* expected = malloc(size);
+    scramble_array(expected, size);
+    bzero(expected, size);
 
-    for (size_t i = 0; i < size; i++)
-    {
-        t_byte expected = 0;
-        t_byte actual = bytes[i];
+    compare_bytes(expected, actual, size);
 
-        if (expected != actual)
-        {
-            char error[BUFFER_SIZE];
-            sprintf(error, "Error at byte %zu, expected 0x%02x was 0x%02x", i,
-                    expected, actual);
-            TEST_FAIL_MESSAGE(error);
-        }
-    }
-
-    free(bytes);
+    free(expected);
+    free(actual);
 }
 
 static void test_stochastic_bzero(void)
