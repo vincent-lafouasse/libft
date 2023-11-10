@@ -16,7 +16,7 @@ static unsigned int	ft_stripped_to_unsigned(const char *num_str);
 
 int	ft_atoi(const char *num_str)
 {
-	char			sign;
+	char	sign;
 
 	sign = 1;
 	while (ft_isspace(*num_str))
