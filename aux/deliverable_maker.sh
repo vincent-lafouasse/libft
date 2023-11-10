@@ -7,18 +7,24 @@ SRC_DIR='./src'
 rm -rf "${DIR_NAME}"
 mkdir "${DIR_NAME}"
 
-MANDATORY_C_FILES=
-BONUS_C_FILES=
+MANDATORY_C_FILES__=
+BONUS_C_FILES__=
 
 for c_file in $(find "${SRC_DIR}" -name '*.c' | grep -v bonus); do
-	MANDATORY_C_FILES="${MANDATORY_C_FILES} ${c_file}"
+	MANDATORY_C_FILES__="${MANDATORY_C_FILES__} $(basename "${c_file}")"
 	cp "${c_file}" "${DIR_NAME}"
 done
 
 for c_file in $(find "${SRC_DIR}" -name '*.c' | grep  bonus); do
-	BONUS_C_FILES="${BONUS_C_FILES} ${c_file}"
+	BONUS_C_FILES__="${BONUS_C_FILES__} $(basename "${c_file}")"
 	cp "${c_file}" "${DIR_NAME}"
 done
 
 LIB='./include/libft.h'
 cp "${LIB}" "${DIR_NAME}"
+
+TEMPLATE_MAKEFILE='./aux/Makefile'
+TARGET_MAKEFILE="${DIR_NAME}/Makefile"
+
+export MANDATORY_C_FILES__ BONUS_C_FILES__
+envsubst < "${TEMPLATE_MAKEFILE}" > "${TARGET_MAKEFILE}"
