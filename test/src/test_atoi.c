@@ -24,6 +24,7 @@ static void test_atoi_valid(void)
     compare_atoi("0");
     compare_atoi("1");
     compare_atoi("42");
+    compare_atoi("+42");
     compare_atoi("-42");
     compare_atoi("              \t\n\t 42");
     compare_atoi("-1");
@@ -31,10 +32,12 @@ static void test_atoi_valid(void)
 
 static void test_atoi_invalid(void)
 {
+    compare_atoi("42born2code");
     compare_atoi("yo yoyo what uppppp");
     compare_atoi("42 c'est pas mal en fait");
     compare_atoi("0xcafe");
     compare_atoi("--------42");
+    compare_atoi("--+--+---+-42born2code");
 }
 
 void run_test_atoi(void)
