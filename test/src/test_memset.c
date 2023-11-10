@@ -11,7 +11,7 @@
 #define BUFFER_SIZE 1024
 #define N_TRIALS 420
 
-void try_memset(int value, size_t size)
+static void try_memset(int value, size_t size)
 {
     if (size == 0)
         TEST_PASS();
@@ -37,13 +37,13 @@ void try_memset(int value, size_t size)
     free(bytes);
 }
 
-void test_memset(void)
+static void test_memset(void)
 {
     try_memset(0, 0);
     try_memset(69, 420);
 }
 
-void test_stochastic_memset(void)
+static void test_stochastic_memset(void)
 {
     for (int i = 0; i < N_TRIALS; i++)
         try_memset(random_int(), random_size());

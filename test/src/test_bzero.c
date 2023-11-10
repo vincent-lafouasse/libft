@@ -11,7 +11,7 @@
 #define BUFFER_SIZE 1024
 #define N_TRIALS 420
 
-void try_bzero(size_t size)
+static void try_bzero(size_t size)
 {
     if (size == 0)
         TEST_PASS();
@@ -38,7 +38,7 @@ void try_bzero(size_t size)
     free(bytes);
 }
 
-void test_stochastic_bzero(void)
+static void test_stochastic_bzero(void)
 {
     for (int i = 0; i < N_TRIALS; i++)
         try_bzero(random_size());

@@ -7,7 +7,7 @@
 
 #define BUFFER_SIZE 1024
 
-void compare_atoi(const char* s)
+static void compare_atoi(const char* s)
 {
     int expected = atoi(s);
     int actual = ft_atoi(s);
@@ -19,7 +19,7 @@ void compare_atoi(const char* s)
     TEST_ASSERT_TRUE_MESSAGE(expected == actual, error);
 }
 
-void test_atoi_valid(void)
+static void test_atoi_valid(void)
 {
     compare_atoi("0");
     compare_atoi("1");
@@ -29,7 +29,7 @@ void test_atoi_valid(void)
     compare_atoi("-1");
 }
 
-void test_atoi_invalid(void)
+static void test_atoi_invalid(void)
 {
     compare_atoi("yo yoyo what uppppp");
     compare_atoi("42 c'est pas mal en fait");

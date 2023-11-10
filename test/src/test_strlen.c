@@ -7,7 +7,7 @@
 
 #define BUFFER_SIZE 1024
 
-void compare_strlen(const char* s)
+static void compare_strlen(const char* s)
 {
     int expected = strlen(s);
     int actual = ft_strlen(s);
@@ -19,7 +19,7 @@ void compare_strlen(const char* s)
     TEST_ASSERT_TRUE_MESSAGE(expected == actual, error);
 }
 
-void test_strlen(void)
+static void test_strlen(void)
 {
     compare_strlen("SOME");
     compare_strlen("");
