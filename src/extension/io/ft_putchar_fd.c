@@ -6,16 +6,14 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 12:11:41 by poss              #+#    #+#             */
-/*   Updated: 2023/11/10 14:55:38 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/11 17:26:15 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <unistd.h>
 
-#define STDOUT 1
-
 void	ft_putchar_fd(char c, int fd)
 {
-	write(fd, &c, STDOUT);
+	write(fd, &c, fd);
 }
