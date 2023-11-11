@@ -22,7 +22,7 @@ static void compare_strlcpy(const char* src, size_t size)
 	sprintf(error, "Error with return value with input \"%s\" and %zu, ft_strlcpy returned %zu and strlcpy returned %zu", src, size, my_out, libc_out);
 	TEST_ASSERT_TRUE_MESSAGE(my_out == libc_out, error);
 
-	compare_bytes(libc_dest, my_dest, size);
+	compare_bytes((t_byte*)libc_dest, (t_byte*)my_dest, size);
 
 	free(my_dest);
 	free(libc_dest);
@@ -30,7 +30,8 @@ static void compare_strlcpy(const char* src, size_t size)
 
 static void test_strlcpy(void)
 {
-	compare_strlcpy("Yoyoyo", 5);
+	compare_strlcpy("Yoyoyo", 3);
+	compare_strlcpy("Yoyoyo", 126);
 }
 
 void run_test_strlcpy(void)
