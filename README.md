@@ -28,11 +28,11 @@ I: implemented, T: tested
 | x | x | [`ft_atoi`](src/libc/stdlib/ft_atoi.c)  |
 | x | ~ | [`ft_strlcpy`]()  |
 | x | ~ | [`ft_strdup`]()  |
+| x | ~ | [`ft_memcpy`]()  |
 |   |   | [`ft_strlcat`]()  |
 |   |   | [`ft_strncmp`]()  |
 |   |   | [`ft_memchr`]()  |
 |   |   | [`ft_memcmp`]()  |
-|   |   | [`ft_memcpy`]()  |
 |   |   | [`ft_memmove`]()  |
 |   |   | [`ft_strnstr`]()  |
 
