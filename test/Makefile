@@ -62,9 +62,10 @@ format:
 # LSP stuff, don't worry about it
 .PHONY: update
 update:
+	make -C .. clean
 	make clean
 	mkdir -p $(BUILD_DIR)
-	bear --output $(BUILD_DIR)/compile_commands.json -- make build
+	bear --output $(BUILD_DIR)/compile_commands.json -- make -C .. build && make build
 
 .PHONY: t r b f c
 t: test
