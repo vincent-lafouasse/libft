@@ -13,6 +13,8 @@ static void compare_strlcpy(const char* src, size_t size)
 {
 	char* my_dest = malloc(size);
 	char* libc_dest = malloc(size);
+	bzero(my_dest, size);
+	bzero(libc_dest, size);
 
 	size_t my_out = ft_strlcpy(my_dest, src, size);
 	size_t libc_out = strlcpy(libc_dest, src, size);
@@ -30,8 +32,11 @@ static void compare_strlcpy(const char* src, size_t size)
 
 static void test_strlcpy(void)
 {
+	compare_strlcpy("Yoyoyo", 0);
 	compare_strlcpy("Yoyoyo", 3);
 	compare_strlcpy("Yoyoyo", 126);
+	compare_strlcpy("", 0);
+	compare_strlcpy("", 420);
 }
 
 void run_test_strlcpy(void)
