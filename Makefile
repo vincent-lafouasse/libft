@@ -56,10 +56,6 @@ fmt:
 
 .PHONY: check
 check: re
-	@cppcheck --language=c $(C_FILES)
-	@cppcheck --language=c $(LIB_H)
-	@printf "$(GREEN)===============CPPCHECK OK===============$(NC)\n"
-	@echo
 	@python3 -c 'print("-" * 80)'
 	@echo SAINTE NORMINETTE SOIS CLEMENTE
 	@python3 -c 'print("-" * 80)'
@@ -68,6 +64,10 @@ check: re
 	@echo
 	@norminette $(LIB_H)
 	@printf "$(GREEN)===============NORME OK===============$(NC)\n"
+	@echo
+	@cppcheck --language=c $(C_FILES)
+	@cppcheck --language=c $(LIB_H)
+	@printf "$(GREEN)===============CPPCHECK OK===============$(NC)\n"
 
 # LSP stuff, don't worry about it
 .PHONY: update
