@@ -17,6 +17,7 @@ void run_test_calloc(void);
 void run_test_strlcpy(void);
 void run_test_strdup(void);
 void run_test_memcpy(void);
+void run_test_memcmp(void);
 
 int main(void)
 {
@@ -31,5 +32,6 @@ int main(void)
     run_test_strlcpy();
     run_test_strdup();
     run_test_memcpy();
+    run_test_memcmp();
     return (UnityEnd());
 }
