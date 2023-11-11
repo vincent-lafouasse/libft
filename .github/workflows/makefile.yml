@@ -14,6 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
+    -name: install libbsd
+      run: sudo apt-get -y install libbsd-dev
+
     - name: install cppcheck
       run: sudo apt-get update && sudo apt-get -y install cppcheck
 
