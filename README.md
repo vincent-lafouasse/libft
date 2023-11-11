@@ -26,8 +26,8 @@ I: implemented, T: tested
 | x | ~ | [`ft_strrchr`](src/libc/string/ft_strrchr.c)  |
 | x | ~ | [`ft_calloc`](src/libc/stdlib/ft_calloc.c)  |
 | x | x | [`ft_atoi`](src/libc/stdlib/ft_atoi.c)  |
+| x | ~ | [`ft_strlcpy`]()  |
 |   |   | [`ft_strlcat`]()  |
-|   |   | [`ft_strlcpy`]()  |
 |   |   | [`ft_strncmp`]()  |
 |   |   | [`ft_memchr`]()  |
 |   |   | [`ft_memcmp`]()  |
