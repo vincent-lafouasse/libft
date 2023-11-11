@@ -7,6 +7,7 @@ SRCS := $(shell find $(SRC_DIR) -name '*.c')
 OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
 
 LIBS = -lft
+LIBS += -lbsd
 LDFLAGS = -L..
 
 INC_DIRS = ./src/test-framework
