@@ -17,7 +17,7 @@ INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
 CC = clang
 CFLAGS  = -std=gnu99
-CFLAGS += -g
+CFLAGS += -g3
 CFLAGS += -Wall -Wextra
 #CFLAGS += -Werror
 CFLAGS += $(INC_FLAGS)
