@@ -6,46 +6,63 @@ it ain't much but it's honest work
 
 ## List of functions
 
+I: implemented, T: tested
+
 ### Libc
 
-- [x] ft_memset
-- [x] ft_bzero
-- [ ] ft_memcpy
-- [ ] ft_memmove
-- [ ] ft_memchr
-- [ ] ft_memcmp
-- [x] ft_strlen
-- [ ] ft_strdup
-- [ ] ft_strlcpy
-- [ ] ft_strlcat
-- [ ] ft_strchr
-- [ ] ft_strrchr
-- [ ] ft_strnstr
-- [ ] ft_strncmp
-- [x] ft_atoi
-- [x] ft_isalpha
-- [x] ft_isdigit
-- [x] ft_isalnum
-- [x] ft_isascii
-- [x] ft_isprint
-- [x] ft_toupper
-- [x] ft_tolower
+| I | T |  Functions  |
+|---|---|-------------|
+| x | x | [`ft_isalpha`](src/libc/ctype/ft_isalpha.c)  |
+| x | x | [`ft_isdigit`](src/libc/ctype/ft_isdigit.c)  |
+| x | x | [`ft_isalnum`](src/libc/ctype/ft_isalnum.c)  |
+| x | x | [`ft_isascii`](src/libc/ctype/ft_isascii.c)  |
+| x | x | [`ft_isprint`](src/libc/ctype/ft_isprint.c)  |
+| x | x | [`ft_toupper`](src/libc/ctype/ft_toupper.c)  |
+| x | x | [`ft_tolower`](src/libc/ctype/ft_tolower.c)  |
+| x | x | [`ft_bzero`](/src/libc/strings/ft_bzero.c)  |
+| x | x | [`ft_memset`](src/libc/string/ft_memset.c)  |
+| x | x | [`ft_strlen`](src/libc/string/ft_strlen.c)  |
+| x | ~ | [`ft_strchr`](src/libc/string/ft_strchr.c)  |
+| x | ~ | [`ft_strrchr`](src/libc/string/ft_strrchr.c)  |
+| x | ~ | [`ft_calloc`](src/libc/stdlib/ft_calloc.c)  |
+| x | x | [`ft_atoi`](src/libc/stdlib/ft_atoi.c)  |
+|   |   | [`ft_strlcat`]()  |
+|   |   | [`ft_strlcpy`]()  |
+|   |   | [`ft_strncmp`]()  |
+|   |   | [`ft_memchr`]()  |
+|   |   | [`ft_memcmp`]()  |
+|   |   | [`ft_memcpy`]()  |
+|   |   | [`ft_memmove`]()  |
+|   |   | [`ft_strnstr`]()  |
+|   |   | [`ft_strdup`]()  |
 
 ### Extension
 
-- [ ] ft_itoa
-- [ ] ft_putendl
-- [ ] ft_putnbr
-- [x] ft_putchar_fd
-- [x] ft_putstr_fd
-- [x] ft_putendl_fd
-- [x] ft_putnbr_fd
+| I | T |  Functions  |
+|---|---|-------------|
+| x | ? | [`ft_putchar_fd`](src/extension/io/ft_putchar_fd.c)  |
+| x | ? | [`ft_putstr_fd`](src/extension/io/ft_putstr_fd.c)  |
+| x | ? | [`ft_putendl_fd`](src/extension/io/ft_putendl_fd.c)  |
+| x | ? | [`ft_putnbr_fd`](src/extension/io/ft_putnbr_fd.c)  |
+|   |   | [`ft_substr`]()  |
+|   |   | [`ft_strjoin`]()  |
+|   |   | [`ft_strtrim`]()  |
+|   |   | [`ft_split`]()  |
+|   |   | [`ft_itoa`]()  |
+|   |   | [`ft_strmapi`]()  |
+|   |   | [`ft_striteri`]()  |
 
-### Bonus
+### Linked Lists
 
--  [ ] ft_lstnew
--  [ ] ft_lstdelone
--  [ ] ft_lstdelone
--  [ ] ft_lstadd
--  [ ] ft_lstiter
--  [ ] ft_lstmap
+| I | T |  Functions  |
+|---|---|-------------|
+|   |   | [`ft_lstnew`]()  |
+|   |   | [`ft_lstadd_front`]()  |
+|   |   | [`ft_lstsize`]()  |
+|   |   | [`ft_lstlast`]()  |
+|   |   | [`ft_lstadd_back`]()  |
+|   |   | [`ft_lstdelone`]()  |
+|   |   | [`ft_lstclear`]()  |
+|   |   | [`ft_lstiter`]()  |
+|   |   | [`ft_lstmap`]()  |
+
