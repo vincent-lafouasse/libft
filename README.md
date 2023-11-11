@@ -29,10 +29,10 @@ I: implemented, T: tested
 | x | ~ | [`ft_strlcpy`]()  |
 | x | ~ | [`ft_strdup`]()  |
 | x | ~ | [`ft_memcpy`]()  |
+| x | ~ | [`ft_memcmp`]()  |
 |   |   | [`ft_strlcat`]()  |
 |   |   | [`ft_strncmp`]()  |
 |   |   | [`ft_memchr`]()  |
-|   |   | [`ft_memcmp`]()  |
 |   |   | [`ft_memmove`]()  |
 |   |   | [`ft_strnstr`]()  |
 
