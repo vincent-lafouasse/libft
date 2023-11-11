@@ -27,6 +27,7 @@ I: implemented, T: tested
 | x | ~ | [`ft_calloc`](src/libc/stdlib/ft_calloc.c)  |
 | x | x | [`ft_atoi`](src/libc/stdlib/ft_atoi.c)  |
 | x | ~ | [`ft_strlcpy`]()  |
+| x |   | [`ft_strdup`]()  |
 |   |   | [`ft_strlcat`]()  |
 |   |   | [`ft_strncmp`]()  |
 |   |   | [`ft_memchr`]()  |
@@ -34,7 +35,6 @@ I: implemented, T: tested
 |   |   | [`ft_memcpy`]()  |
 |   |   | [`ft_memmove`]()  |
 |   |   | [`ft_strnstr`]()  |
-|   |   | [`ft_strdup`]()  |
 
 ### Extension
 
