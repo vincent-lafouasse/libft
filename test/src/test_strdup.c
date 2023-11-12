@@ -2,19 +2,19 @@
 #include "test-framework/unity.h"
 #include "utils.h"
 
-#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 static void compare_strdup(const char* src)
 {
-	char* my_buffer = ft_strdup(src);
-	char* libc_buffer = strdup(src);
+    char* my_buffer = ft_strdup(src);
+    char* libc_buffer = strdup(src);
 
-	compare_bytes((t_byte*)my_buffer, (t_byte*)libc_buffer, strlen(src));
+    compare_bytes((t_byte*)my_buffer, (t_byte*)libc_buffer, strlen(src));
 
-	free(my_buffer);
-	free(libc_buffer);
+    free(my_buffer);
+    free(libc_buffer);
 }
 
 static void test_strdup(void)
@@ -31,5 +31,5 @@ static void test_strdup(void)
 void run_test_strdup(void)
 {
     printf("\n----- Strdup -----\n");
-	RUN_TEST(test_strdup);
+    RUN_TEST(test_strdup);
 }
