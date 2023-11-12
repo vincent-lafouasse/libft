@@ -14,7 +14,7 @@ static void compare_memcmp(const void* s1, const void* s2, size_t n)
 
     char error[BUFFER_SIZE];
     sprintf(error,
-            "Error for input \"%s\". \"%s\", %zu. ft_memcmp returned %d while "
+            "Error for input \"%s\", \"%s\", %zu. ft_memcmp returned %d while "
             "memcmp returned %d",
             (t_byte*)s1, (t_byte*)s2, n, my_res, libc_res);
 
