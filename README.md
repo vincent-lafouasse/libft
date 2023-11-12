@@ -30,11 +30,11 @@ I: implemented, T: tested
 | x | ~ | [`ft_strdup`](src/libc/string/ft_strdup.c)  |
 | x | ~ | [`ft_memcpy`](src/libc/string/ft_memcpy.c)  |
 | x | ~ | [`ft_memcmp`](src/libc/string/ft_memcmp.c)  |
+| x | ~ | [`ft_strncmp`](src/libc/string/ft_strncmp.c)  |
 |   |   | [`ft_strlcat`]()  |
-|   |   | [`ft_strncmp`]()  |
+|   |   | [`ft_strnstr`]()  |
 |   |   | [`ft_memchr`]()  |
 |   |   | [`ft_memmove`]()  |
-|   |   | [`ft_strnstr`]()  |
 
 ### Extension
 
