@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/11/11 18:53:09 by vlafouas         ###   ########.fr       */
+/*   Updated: 2023/11/12 17:05:19 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ size_t					ft_strlcpy(char *dst, const char *src, size_t size);
 char					*ft_strdup(const char *s);
 void					*ft_memcpy(void *dest, const void *src, size_t n);
 int						ft_memcmp(const void *s1, const void *s2, size_t n);
+int						ft_strncmp(const char *s1, const char *s2, size_t n);
 
 /* ----- from `strings.h` --------------------------------------------------- */
 void					ft_bzero(void *s, size_t n);
