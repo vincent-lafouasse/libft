@@ -37,92 +37,62 @@ static void compare_as_bool(int (*my_ft)(int), int (*libc_ft)(int), int c)
 
 static void test_islower(void)
 {
-    int (*my_ft)(int) = &ft_islower;
-    int (*libc_ft)(int) = &islower;
-
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare_as_bool(my_ft, libc_ft, c);
+        compare_as_bool(&ft_islower, &islower, c);
 }
 
 static void test_isupper(void)
 {
-    int (*my_ft)(int) = &ft_isupper;
-    int (*libc_ft)(int) = &isupper;
-
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare_as_bool(my_ft, libc_ft, c);
+        compare_as_bool(&ft_isupper, &isupper, c);
 }
 
 static void test_isdigit(void)
 {
-    int (*my_ft)(int) = &ft_isdigit;
-    int (*libc_ft)(int) = &isdigit;
-
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare_as_bool(my_ft, libc_ft, c);
+        compare_as_bool(&ft_isdigit, &isdigit, c);
 }
 
 static void test_isascii(void)
 {
-    int (*my_ft)(int) = &ft_isascii;
-    int (*libc_ft)(int) = &isascii;
-
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare_as_bool(my_ft, libc_ft, c);
+        compare_as_bool(&ft_isascii, &isascii, c);
 }
 
 static void test_isprint(void)
 {
-    int (*my_ft)(int) = &ft_isprint;
-    int (*libc_ft)(int) = &isprint;
-
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare_as_bool(my_ft, libc_ft, c);
+        compare_as_bool(&ft_isprint, &isprint, c);
 }
 
 static void test_isalpha(void)
 {
-    int (*my_ft)(int) = &ft_isalpha;
-    int (*libc_ft)(int) = &isalpha;
-
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare_as_bool(my_ft, libc_ft, c);
+        compare_as_bool(&ft_isalpha, &isalpha, c);
 }
 
 static void test_isalnum(void)
 {
-    int (*my_ft)(int) = &ft_isalnum;
-    int (*libc_ft)(int) = &isalnum;
-
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare_as_bool(my_ft, libc_ft, c);
+        compare_as_bool(&ft_isalnum, &isalnum, c);
 }
 
 static void test_isspace(void)
 {
-    int (*my_ft)(int) = &ft_isspace;
-    int (*libc_ft)(int) = &isspace;
-
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare_as_bool(my_ft, libc_ft, c);
+        compare_as_bool(&ft_isspace, &isspace, c);
 }
 
 static void test_toupper(void)
 {
-    int (*my_ft)(int) = &ft_toupper;
-    int (*libc_ft)(int) = &toupper;
-
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare_as_int(my_ft, libc_ft, c);
+        compare_as_int(&ft_toupper, &toupper, c);
 }
 
 static void test_tolower(void)
 {
-    int (*my_ft)(int) = &ft_tolower;
-    int (*libc_ft)(int) = &tolower;
-
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
-        compare_as_int(my_ft, libc_ft, c);
+        compare_as_int(&ft_tolower, &tolower, c);
 }
 
 void run_test_ctype(void)
