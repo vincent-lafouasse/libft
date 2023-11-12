@@ -10,9 +10,9 @@ LIBS = -lft
 LIBS += -lbsd
 LDFLAGS = -L..
 
-INC_DIRS = ./src/test-framework
+INC_DIRS = ../include
 INC_DIRS += ./include
-INC_DIRS += ../include
+INC_DIRS += ./src/test-framework
 INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
 CC = clang
