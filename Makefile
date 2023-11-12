@@ -72,6 +72,7 @@ check: re
 .PHONY: rendu
 rendu:
 	bash aux/deliverable_maker.sh
+	@make -C rendu
 
 # LSP stuff, don't worry about it
 .PHONY: update
