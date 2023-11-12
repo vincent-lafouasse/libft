@@ -3,9 +3,12 @@
 #include "utils.h"
 
 #include <string.h>
-#include <bsd/string.h>
 #include <stdlib.h>
 #include <stdio.h>
+
+#ifdef __linux__
+#include <bsd/string.h>
+#endif
 
 #define BUFFER_SIZE 1024
 
