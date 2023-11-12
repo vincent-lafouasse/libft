@@ -69,6 +69,10 @@ check: re
 	@cppcheck --language=c $(LIB_H)
 	@printf "$(GREEN)===============CPPCHECK OK===============$(NC)\n"
 
+.PHONY: rendu
+rendu:
+	bash aux/deliverable_maker.sh
+
 # LSP stuff, don't worry about it
 .PHONY: update
 update:
