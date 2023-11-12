@@ -27,6 +27,7 @@ build: $(NAME)
 
 $(NAME): $(MANDATORY_OBJS) $(HEADER)
 	$(AR) $(ARFLAGS) $@ $(MANDATORY_OBJS)
+	@printf "$(GREEN)===============BUILD COMPLETED===============$(NC)\n"
 
 .PHONY: bonus
 bonus: $(ALL_OBJS) $(HEADER)
@@ -35,3 +36,6 @@ bonus: $(ALL_OBJS) $(HEADER)
 $(BUILD_DIR)/%.c.o: %.c $(HEADER)
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
+
+GREEN = \033[0;32m
+NC = \033[0m
