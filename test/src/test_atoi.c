@@ -20,6 +20,19 @@ static void compare_atoi(const char* s)
     TEST_ASSERT_TRUE_MESSAGE(expected == actual, error);
 }
 
+static void compare_atoi_at_extrema(void)
+{
+    char int_max[BUFFER_SIZE];
+    char int_min[BUFFER_SIZE];
+
+    sprintf(int_max, "%d", INT_MAX);
+    sprintf(int_min, "%d", INT_MIN);
+
+    compare_atoi(int_max);
+    compare_atoi(int_min);
+
+}
+
 static void test_atoi_valid(void)
 {
     compare_atoi("0");
@@ -29,12 +42,7 @@ static void test_atoi_valid(void)
     compare_atoi("-42");
     compare_atoi("              \t\n\t 42");
     compare_atoi("-1");
-    char int_max[BUFFER_SIZE];
-    char int_min[BUFFER_SIZE];
-    sprintf(int_max, "%d", INT_MAX);
-    sprintf(int_min, "%d", INT_MIN);
-    compare_atoi(int_max);
-    compare_atoi(int_min);
+	compare_atoi_at_extrema();
 }
 
 static void test_atoi_invalid(void)
