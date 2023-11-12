@@ -7,7 +7,6 @@ SRCS := $(shell find $(SRC_DIR) -name '*.c')
 OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
 
 LIBS = -lft
-LIBS += -lbsd
 LDFLAGS = -L..
 
 INC_DIRS = ../include
@@ -24,6 +23,12 @@ CFLAGS += $(INC_FLAGS)
 
 CFLAGS += -DUNITY_SUPPORT_64 -DUNITY_OUTPUT_COLOR
 
+
+# link libbsd only on Linux, not on macOS
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Linux)
+	LIBS += -lbsd
+endif
 
 .PHONY: test
 test: clean run
