@@ -56,7 +56,7 @@ I: implemented, T: tested
 
 | I | T |  Functions  |
 |---|---|-------------|
-|   |   | [`ft_lstnew`]()  |
+| x |   | [`ft_lstnew`](src/list/ft_lstnew.c)  |
 |   |   | [`ft_lstadd_front`]()  |
 |   |   | [`ft_lstsize`]()  |
 |   |   | [`ft_lstlast`]()  |
