@@ -24,6 +24,8 @@ static void compare_strlcat(const char* src,
     size_t my_return = ft_strlcat(my_buffer, src, buffer_size);
     size_t libc_return = strlcat(my_buffer, src, buffer_size);
 
+    TEST_ASSERT_EQUAL_STRING(libc_buffer, my_buffer);
+
     char error[BUFFER_SIZE];
 
     sprintf(
@@ -33,7 +35,6 @@ static void compare_strlcat(const char* src,
         src, dest, buffer_size, my_return, libc_return);
     TEST_ASSERT_TRUE_MESSAGE(my_return == libc_return, error);
 
-    TEST_ASSERT_EQUAL_STRING(libc_buffer, my_buffer);
 
     free(my_buffer);
     free(libc_buffer);
