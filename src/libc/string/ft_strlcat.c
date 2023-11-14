@@ -6,14 +6,11 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 16:11:11 by poss              #+#    #+#             */
-/*   Updated: 2023/11/14 17:35:57 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/14 18:18:30 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-
-static size_t	min(size_t, size_t);
 
 /* an explanation
  *
@@ -45,12 +42,4 @@ size_t	ft_strlcat(char *dst, const char *src, size_t buffer_size)
 		dst[buffer_size - 1] = '\0';
 	}
 	return (dst_len + src_len);
-}
-
-static size_t	min(size_t a, size_t b)
-{
-	if (a < b)
-		return (a);
-	else
-		return (b);
 }
