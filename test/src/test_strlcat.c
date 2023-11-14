@@ -33,7 +33,7 @@ static void compare_strlcat(const char* src,
         src, dest, buffer_size, my_return, libc_return);
     TEST_ASSERT_TRUE_MESSAGE(my_return == libc_return, error);
 
-    compare_strings(libc_buffer, my_buffer);
+    TEST_ASSERT_EQUAL_STRING(libc_buffer, my_buffer);
 
     free(my_buffer);
     free(libc_buffer);
