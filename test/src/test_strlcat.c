@@ -42,16 +42,16 @@ static void compare_strlcat(const char* src,
 
 static void test_strlcat(void)
 {
-    compare_strlcat("aaa", "bbb", 0);
-    compare_strlcat("aaa", "bbb", 1);
-    compare_strlcat("aaa", "bbb", 2);
-    compare_strlcat("aaa", "bbb", 3);
-    compare_strlcat("aaa", "bbb", 4);
-    compare_strlcat("aaa", "bbb", 5);
-    compare_strlcat("aaa", "bbb", 5);
-    compare_strlcat("aaa", "bbb", 6);
-    compare_strlcat("aaa", "bbb", 7);
-    compare_strlcat("aaa", "bbb", 8);
+    compare_strlcat("aaa", "bb", 0);
+    compare_strlcat("aaa", "bb", 1);
+    compare_strlcat("aaa", "bb", 2);
+    compare_strlcat("aaa", "bb", 3);
+    compare_strlcat("aaa", "bb", 4);
+    compare_strlcat("aaa", "bb", 5);
+    compare_strlcat("aaa", "bb", 5);
+    compare_strlcat("aaa", "bb", 6);
+    compare_strlcat("aaa", "bb", 7);
+    compare_strlcat("aaa", "bb", 8);
 }
 
 void run_test_strlcat(void)
