@@ -19,6 +19,7 @@ void run_test_strdup(void);
 void run_test_memcpy(void);
 void run_test_memcmp(void);
 void run_test_strncmp(void);
+void run_test_strlcat(void);
 
 int main(void)
 {
@@ -31,6 +32,7 @@ int main(void)
     run_test_calloc();
     run_test_strchr();
     run_test_strlcpy();
+    run_test_strlcat();
     run_test_strdup();
     run_test_memcpy();
     run_test_memcmp();

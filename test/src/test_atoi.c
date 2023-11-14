@@ -30,7 +30,6 @@ static void compare_atoi_at_extrema(void)
 
     compare_atoi(int_max);
     compare_atoi(int_min);
-
 }
 
 static void test_atoi_valid(void)
@@ -42,7 +41,7 @@ static void test_atoi_valid(void)
     compare_atoi("-42");
     compare_atoi("              \t\n\t 42");
     compare_atoi("-1");
-	compare_atoi_at_extrema();
+    compare_atoi_at_extrema();
 }
 
 static void test_atoi_invalid(void)

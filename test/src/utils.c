@@ -27,6 +27,27 @@ void compare_bytes(t_byte* expected_array, t_byte* actual_array, size_t size)
     }
 }
 
+void compare_strings(const char* expected, const char* actual)
+{
+    size_t i = 0;
+
+    while (expected[i] == actual[i] && expected[i] && actual[i])
+    {
+        i++;
+    }
+    if (expected[i] == '\0' && actual[i] == '\0')
+    {
+        TEST_PASS();
+    }
+
+    char error[BUFFER_SIZE];
+    sprintf(error,
+            "Error, expected string \"%s\" and actual string \"%s\" are "
+            "different at byte %zu. Expected %c was %c",
+            expected, actual, i, expected[i], actual[i]);
+    TEST_FAIL_MESSAGE(error);
+}
+
 void scramble_array(void* array, size_t size)
 {
     t_byte* bytes = (t_byte*)array;
