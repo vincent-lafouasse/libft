@@ -16,10 +16,10 @@ static void compare_strlcat(const char* src,
                             const char* dest,
                             size_t buffer_size)
 {
-    char* my_buffer = malloc(buffer_size);
-    char* libc_buffer = malloc(buffer_size);
-    strlcpy(my_buffer, src, buffer_size);
-    strlcpy(libc_buffer, src, buffer_size);
+    char* my_buffer = malloc(1 + buffer_size + strlen(dest));
+    char* libc_buffer = malloc(1 + buffer_size + strlen(dest));
+    strlcpy(my_buffer, dest, buffer_size);
+    strlcpy(libc_buffer, dest, buffer_size);
 
     size_t my_return = ft_strlcat(my_buffer, src, buffer_size);
     size_t libc_return = strlcat(my_buffer, src, buffer_size);
@@ -30,7 +30,7 @@ static void compare_strlcat(const char* src,
         error,
         "Error with return value with input \"%s\", \"%s\" and %zu, ft_strlcat "
         "returned %zu and strlcat returned %zu",
-        dest, src, buffer_size, my_return, libc_return);
+        src, dest, buffer_size, my_return, libc_return);
     TEST_ASSERT_TRUE_MESSAGE(my_return == libc_return, error);
 
     compare_strings(libc_buffer, my_buffer);
