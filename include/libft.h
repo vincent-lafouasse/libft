@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/11/14 15:47:00 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/14 15:51:45 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,8 @@ void					ft_putchar(char c);
 void					ft_putstr(const char *s);
 void					ft_putendl(const char *s);
 void					ft_putnbr(int n);
+
+/* ----- List operations ---------------------------------------------------- */
+t_list					*ft_lstnew(void *content);
 
 #endif /* LIBFT_H */
