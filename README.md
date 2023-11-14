@@ -26,12 +26,12 @@ I: implemented, T: tested
 | x | ~ | [`ft_strrchr`](src/libc/string/ft_strrchr.c)  |
 | x | ~ | [`ft_calloc`](src/libc/stdlib/ft_calloc.c)  |
 | x | x | [`ft_atoi`](src/libc/stdlib/ft_atoi.c)  |
-| x | ~ | [`ft_strlcpy`](src/libc/string/ft_strlcpy.c)  |
+| x | O | [`ft_strlcpy`](src/libc/string/ft_strlcpy.c)  |
 | x | ~ | [`ft_strdup`](src/libc/string/ft_strdup.c)  |
 | x | ~ | [`ft_memcpy`](src/libc/string/ft_memcpy.c)  |
 | x | ~ | [`ft_memcmp`](src/libc/string/ft_memcmp.c)  |
 | x | ~ | [`ft_strncmp`](src/libc/string/ft_strncmp.c)  |
-|   |   | [`ft_strlcat`]()  |
+| x | ~ | [`ft_strlcat`]()  |
 |   |   | [`ft_strnstr`]()  |
 |   |   | [`ft_memchr`]()  |
 |   |   | [`ft_memmove`]()  |
