@@ -6,11 +6,12 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 16:11:11 by poss              #+#    #+#             */
-/*   Updated: 2023/11/14 18:18:30 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/14 19:50:30 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdbool.h>
 
 /* an explanation
  *
@@ -21,11 +22,15 @@
  * - the buffer can hold both
  */
 
+static bool	buffer_is_terminated(const char *s, size_t buffer_size);
+
 size_t	ft_strlcat(char *dst, const char *src, size_t buffer_size)
 {
 	size_t	src_len;
 	size_t	dst_len;
 
+	if (!buffer_is_terminated(dst, buffer_size))
+		return (buffer_size + ft_strlen(src));
 	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
 	if (dst_len > buffer_size)
@@ -42,4 +47,18 @@ size_t	ft_strlcat(char *dst, const char *src, size_t buffer_size)
 		dst[buffer_size - 1] = '\0';
 	}
 	return (dst_len + src_len);
+}
+
+static bool	buffer_is_terminated(const char *s, size_t buffer_size)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < buffer_size)
+	{
+		if (s[i] == '\0')
+			return (true);
+		i++;
+	}
+	return (false);
 }
