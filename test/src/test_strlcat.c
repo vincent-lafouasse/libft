@@ -33,13 +33,25 @@ static void compare_strlcat(const char* src,
         dest, src, buffer_size, my_return, libc_return);
     TEST_ASSERT_TRUE_MESSAGE(my_return == libc_return, error);
 
-    compare_bytes((t_byte*)libc_buffer, (t_byte*)my_buffer, buffer_size);
+    compare_strings(libc_buffer, my_buffer);
 
     free(my_buffer);
     free(libc_buffer);
 }
 
-static void test_strlcat(void) {}
+static void test_strlcat(void)
+{
+    compare_strlcat("aaa", "bbb", 0);
+    compare_strlcat("aaa", "bbb", 1);
+    compare_strlcat("aaa", "bbb", 2);
+    compare_strlcat("aaa", "bbb", 3);
+    compare_strlcat("aaa", "bbb", 4);
+    compare_strlcat("aaa", "bbb", 5);
+    compare_strlcat("aaa", "bbb", 5);
+    compare_strlcat("aaa", "bbb", 6);
+    compare_strlcat("aaa", "bbb", 7);
+    compare_strlcat("aaa", "bbb", 8);
+}
 
 void run_test_strlcat(void)
 {
