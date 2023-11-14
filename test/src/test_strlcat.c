@@ -12,8 +12,8 @@
 
 #define BUFFER_SIZE 1024
 
-static void compare_strlcat(const char* src,
-                            const char* dest,
+static void compare_strlcat(const char* dest,
+                            const char* src,
                             size_t buffer_size)
 {
     char* my_buffer = malloc(1 + buffer_size + strlen(dest) + strlen(src));
@@ -32,7 +32,7 @@ static void compare_strlcat(const char* src,
         error,
         "Error with return value with input \"%s\", \"%s\" and %zu, ft_strlcat "
         "returned %zu and strlcat returned %zu",
-        src, dest, buffer_size, my_return, libc_return);
+        dest,src, buffer_size, my_return, libc_return);
     TEST_ASSERT_TRUE_MESSAGE(my_return == libc_return, error);
 
 
