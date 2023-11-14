@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/11/12 17:05:19 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/14 15:47:00 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 # include <stddef.h>
 
 typedef unsigned char	t_byte;
+
+typedef struct s_list
+{
+	void				*content;
+	struct s_list		*next;
+}						t_list;
 
 /* ----- from `stdlib.h` ---------------------------------------------------- */
 int						ft_atoi(const char *num_str);
