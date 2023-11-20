@@ -27,6 +27,8 @@ static void test_strncmp(void)
     compare_strncmp("aaa", "aab", 1);
     compare_strncmp("aaa", "aab", 2);
     compare_strncmp("aaa", "aab", 3);
+	compare_strncmp("aaa", "zzz", 0);
+	compare_strncmp("aaa", "", 0);
 }
 
 void run_test_strncmp(void)
