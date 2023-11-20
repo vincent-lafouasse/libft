@@ -11,12 +11,12 @@ MANDATORY_C_FILES__=
 BONUS_C_FILES__=
 
 for c_file in $(find "${SRC_DIR}" -name '*.c' | grep -v bonus); do
-	MANDATORY_C_FILES__="${MANDATORY_C_FILES__} $(basename "${c_file}")"
+	MANDATORY_C_FILES__+=" $(basename "${c_file}")"
 	cp "${c_file}" "${DIR_NAME}"
 done
 
 for c_file in $(find "${SRC_DIR}" -name '*.c' | grep  bonus); do
-	BONUS_C_FILES__="${BONUS_C_FILES__} $(basename "${c_file}")"
+	BONUS_C_FILES__+=" $(basename "${c_file}")"
 	cp "${c_file}" "${DIR_NAME}"
 done
 
