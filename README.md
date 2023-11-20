@@ -32,8 +32,8 @@ I: implemented, T: tested
 | x | ~ | [`ft_memcmp`](src/libc/string/ft_memcmp.c)  |
 | x | ~ | [`ft_strncmp`](src/libc/string/ft_strncmp.c)  |
 | x | ~ | [`ft_strlcat`]()  |
+| x |   | [`ft_memchr`]()  |
 |   |   | [`ft_strnstr`]()  |
-|   |   | [`ft_memchr`]()  |
 |   |   | [`ft_memmove`]()  |
 
 ### Extension
