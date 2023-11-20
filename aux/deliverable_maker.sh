@@ -1,6 +1,5 @@
 #! /usr/bin/env bash
 
-
 DIR_NAME='rendu'
 SRC_DIR='./src'
 
@@ -15,7 +14,7 @@ for c_file in $(find "${SRC_DIR}" -name '*.c' | grep -v bonus); do
 	cp "${c_file}" "${DIR_NAME}"
 done
 
-for c_file in $(find "${SRC_DIR}" -name '*.c' | grep  bonus); do
+for c_file in $(find "${SRC_DIR}" -name '*.c' | grep bonus); do
 	BONUS_C_FILES__+=" $(basename "${c_file}")"
 	cp "${c_file}" "${DIR_NAME}"
 done
@@ -27,4 +26,4 @@ TEMPLATE_MAKEFILE='./aux/Makefile'
 TARGET_MAKEFILE="${DIR_NAME}/Makefile"
 
 export MANDATORY_C_FILES__ BONUS_C_FILES__
-envsubst < "${TEMPLATE_MAKEFILE}" > "${TARGET_MAKEFILE}"
+envsubst <"${TEMPLATE_MAKEFILE}" >"${TARGET_MAKEFILE}"
