@@ -36,11 +36,15 @@ static void compare_strrchr(const char* s, int c)
 static void test_strchr(void)
 {
     compare_strchr("Hello what is up", 'H');
+    compare_strchr("Hello what is up", 'w');
+    compare_strchr("Hello what is up", '\0');
 }
 
 static void test_strrchr(void)
 {
     compare_strrchr("Hello what is up", 'H');
+    compare_strrchr("Hello what is up", 'w');
+    compare_strrchr("Hello what is up", '\0');
 }
 
 void run_test_strchr(void)
