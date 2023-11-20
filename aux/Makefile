@@ -37,5 +37,13 @@ $(BUILD_DIR)/%.c.o: %.c $(HEADER)
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
+.PHONY: clean
+clean:
+	rm -rf "$(BUILD_DIR)"
+
+.PHONY: fclean
+fclean: clean
+	rm -rf "$(NAME)"
+
 GREEN = \033[0;32m
 NC = \033[0m
