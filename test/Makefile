@@ -9,7 +9,7 @@ OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
 LIBS = -lft
 LDFLAGS = -L..
 
-INC_DIRS = ../include
+INC_DIRS = ..
 INC_DIRS += ./include
 INC_DIRS += ./src/test-framework
 INC_FLAGS := $(addprefix -I,$(INC_DIRS))
