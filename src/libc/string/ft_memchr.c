@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/20 13:46:04 by poss              #+#    #+#             */
-/*   Updated: 2023/11/20 21:41:04 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/22 00:10:01 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	bytes = s;
 	while (i < n)
 	{
-		if (bytes[i] == (t_byte)c)
+		if (bytes[i] == (unsigned char)c)
 		{
 			return ((void *)(bytes + i));
 		}

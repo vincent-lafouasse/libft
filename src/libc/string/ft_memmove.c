@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 22:20:13 by poss              #+#    #+#             */
-/*   Updated: 2023/11/21 22:30:14 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/22 00:11:14 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	t_byte	*dest_bytes;
-	t_byte	*src_bytes;
+	t_byte			*dest_bytes;
+	const t_byte	*src_bytes;
 
 	dest_bytes = (t_byte *)dest;
 	src_bytes = (t_byte *)src;
