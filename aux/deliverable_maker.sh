@@ -19,7 +19,7 @@ for c_file in $(find "${SRC_DIR}" -name '*.c' | grep bonus); do
 	cp "${c_file}" "${DIR_NAME}"
 done
 
-LIB='./include/libft.h'
+LIB='./libft.h'
 cp "${LIB}" "${DIR_NAME}"
 
 TEMPLATE_MAKEFILE='./aux/Makefile'
