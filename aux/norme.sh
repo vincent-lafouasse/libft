@@ -12,8 +12,8 @@ function norm {
 SRC_DIR='./src'
 H_DIR='.'
 
-C_FILES=$(find $SRC_DIR -name '*.c')
-H_FILES=$(find $H_DIR -name '*.h')
+C_FILES=$(find $SRC_DIR -name '*.c' | grep -v unity) 
+H_FILES=$(find $H_DIR -name '*.h' | grep -v unity)
 
 TO_NORM="$C_FILES $H_FILES"
 
