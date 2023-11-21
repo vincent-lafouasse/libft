@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 14:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/11/10 16:41:27 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/21 15:27:15 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	while (1)
 	{
-		if (*s == c)
+		if (*s == (unsigned char)c)
 		{
 			return ((char *)s);
 		}
+		if (*s == '\0')
+		{
+			return (NULL);
+		}
 		s++;
 	}
-	return (NULL);
 }
