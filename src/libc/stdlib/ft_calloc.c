@@ -6,7 +6,7 @@
 /*   By: vlafouas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 13:12:21 by vlafouas          #+#    #+#             */
-/*   Updated: 2023/11/21 15:58:09 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/21 19:29:16 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	t_byte	*output;
+	void	*output;
 
 	if (size != 0 && (nmemb * size) / size != nmemb)
 	{
