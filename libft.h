@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/11/21 18:24:27 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/21 22:04:07 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ size_t					ft_strlcat(char *dst, const char *src,
 							size_t buffer_size);
 char					*ft_strdup(const char *s);
 void					*ft_memcpy(void *dest, const void *src, size_t n);
+void					*ft_memmove(void *dest, const void *src, size_t n);
+void					*ft_memccpy(void *dest, const void *src, int c,
+							size_t n);
 int						ft_memcmp(const void *s1, const void *s2, size_t n);
 int						ft_strncmp(const char *s1, const char *s2, size_t n);
 void					*ft_memchr(const void *s, int c, size_t n);
