@@ -6,7 +6,7 @@
 /*   By: vlafouas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/11 18:40:18 by vlafouas          #+#    #+#             */
-/*   Updated: 2023/11/11 18:57:05 by vlafouas         ###   ########.fr       */
+/*   Updated: 2023/11/22 00:03:51 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		if (bytes1[i] - bytes2[i])
+		if (bytes1[i] != bytes2[i])
 			return (bytes1[i] - bytes2[i]);
 		i++;
 	}
