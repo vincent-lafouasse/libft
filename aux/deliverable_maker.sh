@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
-DIR_NAME='rendu'
-SRC_DIR='./src'
+DIR_NAME=rendu
+SRC_DIR=./src
 
 rm -rf "${DIR_NAME}"
 mkdir "${DIR_NAME}"
