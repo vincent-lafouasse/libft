@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 18:24:46 by poss              #+#    #+#             */
-/*   Updated: 2023/11/21 20:30:57 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/21 21:59:14 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return ((char *)haystack);
 	}
 	i = 0;
-	while (*haystack && i + needle_len < len)
+	while (*haystack && i + needle_len <= len)
 	{
 		if (!ft_strncmp(haystack, needle, needle_len))
 		{
