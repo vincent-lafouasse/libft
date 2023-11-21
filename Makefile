@@ -43,7 +43,7 @@ fclean: clean
 	@make -C test clean
 
 .PHONY: re
-re: fclean $(LIB)
+re: fclean update
 
 .PHONY: test
 test: $(LIB)
