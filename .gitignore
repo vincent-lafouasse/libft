@@ -5,3 +5,4 @@ libft.a
 .DS_store
 rendu/
 misc*/
+a.out*
