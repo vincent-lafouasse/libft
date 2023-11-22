@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:33:46 by poss              #+#    #+#             */
-/*   Updated: 2023/11/22 18:13:23 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/22 18:37:56 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define TESTING 1
+#define TESTING 0
 
 int		seek_word_beginning(const char *s, char c, int len, int start);
 int		seek_word_end(const char *s, char c, int len, int start);
+
+void	*ft_free(char **s, int i)
+{
+	while (i >= 0)
+	{
+		free(s[i]);
+		i--;
+	}
+	free(s);
+	return (NULL);
+}
 
 size_t	get_n_words(char const *s, char c, size_t len)
 {
@@ -75,12 +86,15 @@ char	**ft_split(char const *s, char c)
 	{
 		end = seek_word_end(s, c, len, start);
 		out[out_index] = ft_substr(s, start, end);
+		if (out[out_index] == NULL)
+			return (ft_free(out, out_index));
 		start = seek_word_beginning(s, c, len, end);
 		out_index++;
 	}
 	out[out_index] = NULL;
 	return (out);
 }
+/*
 #if TESTING
 
 int	main(void)
@@ -98,3 +112,5 @@ int	main(void)
 	free(s);
 }
 #endif
+
+*/

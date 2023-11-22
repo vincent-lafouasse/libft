@@ -6,18 +6,17 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:37:48 by poss              #+#    #+#             */
-/*   Updated: 2023/11/22 22:22:50 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/22 22:24:38 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-unsigned int	ft_abs(int n);
+void			reverse_fill(char *buffer, int n);
+void			mem_reverse(void *s, size_t len);
 static size_t	get_n_digits(unsigned int n);
-void			invert_fill(char *buffer, int n);
 unsigned int	ft_abs(int n);
-void			mem_revert(void *s, size_t len);
 
 char	*ft_itoa(int n)
 {
@@ -30,12 +29,12 @@ char	*ft_itoa(int n)
 	out = malloc(1 + len);
 	if (!out)
 		return (NULL);
-	invert_fill(out, n);
-	mem_revert(out, len);
+	reverse_fill(out, n);
+	mem_reverse(out, len);
 	return (out);
 }
 
-void	invert_fill(char *buffer, int n)
+void	reverse_fill(char *buffer, int n)
 {
 	unsigned int	abs;
 
@@ -50,7 +49,7 @@ void	invert_fill(char *buffer, int n)
 		*buffer = '-';
 }
 
-void	mem_revert(void *s, size_t len)
+void	mem_reverse(void *s, size_t len)
 {
 	size_t	i;
 	t_byte	mem;
