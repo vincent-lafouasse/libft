@@ -6,15 +6,16 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:33:46 by poss              #+#    #+#             */
-/*   Updated: 2023/11/22 17:15:06 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/22 17:41:29 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdbool.h>
+#include <stdio.h>
 #include <stdlib.h>
-
-#define WAITING_NEW_WORD -1
+#include <string.h>
+#define TESTING 0
 
 size_t	get_n_words(char const *s, char c)
 {
@@ -39,53 +40,64 @@ size_t	get_n_words(char const *s, char c)
 	return (n);
 }
 
+int	seek_word_beginning(const char *s, char c, int len, int start)
+{
+	while (s[start] == c && start <= len)
+	{
+		start++;
+	}
+	if (start == len)
+		return (-1);
+	else
+		return (start);
+}
+
+int	seek_word_end(const char *s, char c, int len, int start)
+{
+	while (s[start] != c && start <= len)
+	{
+		start++;
+	}
+	return (start);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**out;
 	int		start;
+	int		end;
 	int		len;
-	int		s_index;
 	int		out_index;
 
 	out = malloc((1 + get_n_words(s, c)) * sizeof(char *));
-	if (!out)
+	if (out == NULL)
 		return (NULL);
-	s_index = 0;
 	out_index = 0;
 	len = ft_strlen(s);
-	start = WAITING_NEW_WORD;
-	while (s_index <= len)
+	start = seek_word_beginning(s, c, len, 0);
+	while (start != -1)
 	{
-		if (start == WAITING_NEW_WORD && s[s_index] != c)
-			start = s_index;
-		if (start != WAITING_NEW_WORD && (s[s_index] == c || s_index == len))
-		{
-			out[out_index] = ft_substr(s, start, s_index - start);
-			out_index++;
-			start = WAITING_NEW_WORD;
-		}
-		s_index++;
+		end = seek_word_end(s, c, len, start);
+		out[out_index] = ft_substr(s, start, end);
+		start = seek_word_beginning(s, c, len, end);
+		out_index++;
 	}
 	out[out_index] = NULL;
 	return (out);
 }
-
-#include <stdio.h>
-#include <string.h>
+#if TESTING
 
 int	main(void)
 {
 	char	c;
 	char	*s;
-	char	**abc;
+	char	**split;
 
 	s = strdup("hello world       haha       ");
 	c = ' ';
-	printf("%zu\n", get_n_words(s, c));
-	abc = ft_split(s, c);
-	while (*abc)
-	{
-		printf("%s\n", *abc);
-		abc++;
-	}
+	split = ft_split(s, c);
+	while (*split)
+		printf("%s\n", *split++);
+	free(s);
 }
+#endif
