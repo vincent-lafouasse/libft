@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:37:48 by poss              #+#    #+#             */
-/*   Updated: 2023/11/22 16:11:53 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/22 16:15:57 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,25 @@
 
 unsigned int	ft_abs(int n);
 
-static size_t	get_n_digits(unsigned int n)
-{
-	size_t	n_digits;
+static size_t	get_n_digits(unsigned int n);
+void			invert_fill(char *buffer, int n);
+unsigned int	ft_abs(int n);
+void			mem_revert(void *s, size_t len);
 
-	n_digits = 0;
-	while (n)
-	{
-		n /= 10;
-		n_digits++;
-	}
-	return (n_digits);
+char	*ft_itoa(int n)
+{
+	char	*out;
+	size_t	len;
+
+	if (n == 0)
+		return (ft_strdup("0"));
+	len = get_n_digits(ft_abs(n)) + (n < 0);
+	out = malloc(1 + len);
+	if (!out)
+		return (NULL);
+	invert_fill(out, n);
+	mem_revert(out, len);
+	return (out);
 }
 
 void	invert_fill(char *buffer, int n)
@@ -43,14 +51,6 @@ void	invert_fill(char *buffer, int n)
 	}
 	if (n < 0)
 		*buffer = '-';
-}
-
-unsigned int	ft_abs(int n)
-{
-	if (n >= 0)
-		return (n);
-	else
-		return (-n);
 }
 
 void	mem_revert(void *s, size_t len)
@@ -70,32 +70,23 @@ void	mem_revert(void *s, size_t len)
 	}
 }
 
-char	*ft_itoa(int n)
+static size_t	get_n_digits(unsigned int n)
 {
-	char	*out;
-	size_t	len;
+	size_t	n_digits;
 
-	if (n == 0)
-		return (ft_strdup("0"));
-	len = get_n_digits(ft_abs(n)) + (n < 0);
-	out = malloc(1 + len);
-	if (!out)
-		return (NULL);
-	invert_fill(out, n);
-	mem_revert(out, len);
-	return (out);
+	n_digits = 0;
+	while (n)
+	{
+		n /= 10;
+		n_digits++;
+	}
+	return (n_digits);
 }
 
-#if TESTING
-
-# include <limits.h>
-# include <stdio.h>
-
-int	main(void)
+unsigned int	ft_abs(int n)
 {
-	char	*s;
-
-	s = ft_itoa(-1);
-	printf("%s\n", s);
+	if (n >= 0)
+		return (n);
+	else
+		return (-n);
 }
-#endif
