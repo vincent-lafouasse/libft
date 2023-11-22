@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/11/22 14:13:01 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/22 14:14:23 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ int						ft_isspace(int c);
 
 /* ----- string extension --------------------------------------------------- */
 char					*ft_strjoin(char const *s1, char const *s2);
+char					*ft_substr(char const *s, unsigned int start,
+							size_t len);
 
 /* ----- I/O extension ------------------------------------------------------ */
 void					ft_putchar_fd(char c, int fd);
