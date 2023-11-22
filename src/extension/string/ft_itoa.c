@@ -6,14 +6,12 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:37:48 by poss              #+#    #+#             */
-/*   Updated: 2023/11/22 16:23:12 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/22 22:22:50 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-
-#define TESTING 0
 
 unsigned int	ft_abs(int n);
 static size_t	get_n_digits(unsigned int n);
