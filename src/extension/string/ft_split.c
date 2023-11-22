@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:33:46 by poss              #+#    #+#             */
-/*   Updated: 2023/11/22 17:41:29 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/22 18:13:23 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,34 +15,30 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define TESTING 0
+#define TESTING 1
 
-size_t	get_n_words(char const *s, char c)
+int		seek_word_beginning(const char *s, char c, int len, int start);
+int		seek_word_end(const char *s, char c, int len, int start);
+
+size_t	get_n_words(char const *s, char c, size_t len)
 {
 	size_t	n;
-	bool	is_new_word;
+	int		start;
 
 	n = 0;
-	is_new_word = true;
-	while (*s)
+	start = seek_word_beginning(s, c, len, 0);
+	while (start != -1)
 	{
-		if (is_new_word && *s != c)
-		{
-			n++;
-			is_new_word = false;
-		}
-		if (!is_new_word && *s == c)
-		{
-			is_new_word = true;
-		}
-		s++;
+		n++;
+		start = seek_word_end(s, c, len, start);
+		start = seek_word_beginning(s, c, len, start);
 	}
 	return (n);
 }
 
 int	seek_word_beginning(const char *s, char c, int len, int start)
 {
-	while (s[start] == c && start <= len)
+	while (s[start] == c && start < len)
 	{
 		start++;
 	}
@@ -69,11 +65,11 @@ char	**ft_split(char const *s, char c)
 	int		len;
 	int		out_index;
 
-	out = malloc((1 + get_n_words(s, c)) * sizeof(char *));
+	len = ft_strlen(s);
+	out = malloc((1 + get_n_words(s, c, len)) * sizeof(char *));
 	if (out == NULL)
 		return (NULL);
 	out_index = 0;
-	len = ft_strlen(s);
 	start = seek_word_beginning(s, c, len, 0);
 	while (start != -1)
 	{
@@ -93,8 +89,9 @@ int	main(void)
 	char	*s;
 	char	**split;
 
-	s = strdup("hello world       haha       ");
+	s = strdup("      hello    world       haha       ");
 	c = ' ';
+	printf("%zu\n", get_n_words(s, c, strlen(s)));
 	split = ft_split(s, c);
 	while (*split)
 		printf("%s\n", *split++);
