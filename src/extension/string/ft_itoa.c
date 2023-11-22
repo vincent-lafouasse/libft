@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:37:48 by poss              #+#    #+#             */
-/*   Updated: 2023/11/22 16:15:57 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/22 16:23:12 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 #define TESTING 0
 
 unsigned int	ft_abs(int n);
-
 static size_t	get_n_digits(unsigned int n);
 void			invert_fill(char *buffer, int n);
 unsigned int	ft_abs(int n);
