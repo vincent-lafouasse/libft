@@ -52,7 +52,7 @@ I: implemented, T: tested
 |   |   | [`ft_strmapi`]()  |
 |   |   | [`ft_striteri`]()  |
 
-### Linked Lists
+### List operations
 
 | I | T |  Functions  |
 |---|---|-------------|
