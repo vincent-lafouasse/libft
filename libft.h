@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/11/22 14:28:43 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/22 15:26:19 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ char					*ft_strjoin(char const *s1, char const *s2);
 char					*ft_substr(char const *s, unsigned int start,
 							size_t len);
 char					*ft_strtrim(char const *s1, char const *set);
+char					**ft_split(char const *s, char c);
+char					*ft_itoa(int n);
+char					*ft_strmapi(char const *s, char (*f)(unsigned int,
+								char));
+void					ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 /* ----- I/O extension ------------------------------------------------------ */
 void					ft_putchar_fd(char c, int fd);
