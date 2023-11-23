@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:33:46 by poss              #+#    #+#             */
-/*   Updated: 2023/11/22 18:37:56 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/23 18:05:29 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define TESTING 0
 
-int		seek_word_beginning(const char *s, char c, int len, int start);
-int		seek_word_end(const char *s, char c, int len, int start);
+#define TESTING 1
+
+int		seek_next_word(const char *s, char c, int len, int start);
+int		seek_next_sep(const char *s, char c, int len, int start);
 
 void	*ft_free(char **s, int i)
 {
@@ -37,17 +38,17 @@ size_t	get_n_words(char const *s, char c, size_t len)
 	int		start;
 
 	n = 0;
-	start = seek_word_beginning(s, c, len, 0);
+	start = seek_next_word(s, c, len, 0);
 	while (start != -1)
 	{
 		n++;
-		start = seek_word_end(s, c, len, start);
-		start = seek_word_beginning(s, c, len, start);
+		start = seek_next_sep(s, c, len, start);
+		start = seek_next_word(s, c, len, start);
 	}
 	return (n);
 }
 
-int	seek_word_beginning(const char *s, char c, int len, int start)
+int	seek_next_word(const char *s, char c, int len, int start)
 {
 	while (s[start] == c && start < len)
 	{
@@ -59,7 +60,7 @@ int	seek_word_beginning(const char *s, char c, int len, int start)
 		return (start);
 }
 
-int	seek_word_end(const char *s, char c, int len, int start)
+int	seek_next_sep(const char *s, char c, int len, int start)
 {
 	while (s[start] != c && start <= len)
 	{
@@ -81,14 +82,14 @@ char	**ft_split(char const *s, char c)
 	if (out == NULL)
 		return (NULL);
 	out_index = 0;
-	start = seek_word_beginning(s, c, len, 0);
+	start = seek_next_word(s, c, len, 0);
 	while (start != -1)
 	{
-		end = seek_word_end(s, c, len, start);
+		end = seek_next_sep(s, c, len, start);
 		out[out_index] = ft_substr(s, start, end);
 		if (out[out_index] == NULL)
 			return (ft_free(out, out_index));
-		start = seek_word_beginning(s, c, len, end);
+		start = seek_next_word(s, c, len, end);
 		out_index++;
 	}
 	out[out_index] = NULL;
