@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:33:46 by poss              #+#    #+#             */
-/*   Updated: 2023/11/23 18:05:29 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/28 17:01:04 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ char	**ft_split(char const *s, char c)
 	while (start != -1)
 	{
 		end = seek_next_sep(s, c, len, start);
-		out[out_index] = ft_substr(s, start, end);
+		out[out_index] = ft_substr(s, start, end - start);
 		if (out[out_index] == NULL)
 			return (ft_free(out, out_index));
 		start = seek_next_word(s, c, len, end);
@@ -95,7 +95,9 @@ char	**ft_split(char const *s, char c)
 	out[out_index] = NULL;
 	return (out);
 }
+
 /*
+
 #if TESTING
 
 int	main(void)
@@ -104,7 +106,7 @@ int	main(void)
 	char	*s;
 	char	**split;
 
-	s = strdup("      hello    world       haha       ");
+	s = strdup("a b c");
 	c = ' ';
 	printf("%zu\n", get_n_words(s, c, strlen(s)));
 	split = ft_split(s, c);
