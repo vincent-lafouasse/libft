@@ -8,8 +8,14 @@ BUILD_DIR = ./build
 
 LIB_H = $(INC_DIR)/libft.h
 
-C_FILES = $(shell find $(SRC_DIR) -name '*.c')
-OBJS := $(C_FILES:%=$(BUILD_DIR)/%.o)
+MANDATORY_C_FILES = $(shell find $(SRC_DIR) -name '*.c' | grep -v lst)
+BONUS_C_FILES = $(shell find $(SRC_DIR) -name '*.c' | grep lst)
+
+MANDATORY_OBJS := $(MANDATORY_C_FILES:%=$(BUILD_DIR)/%.o)
+BONUS_OBJS := $(BONUS_C_FILES:%=$(BUILD_DIR)/%.o)
+ALL_OBJS = $(MANDATORY_OBJS)
+ALL_OBJS += $(BONUS_OBJS)
+
 
 CFLAGS  = -Wall -Wextra
 #CFLAGS += -Werror
@@ -21,9 +27,15 @@ all: build
 .PHONY: build
 build: $(LIB)
 
-$(LIB): $(OBJS) $(LIB_H)
+$(LIB): $(MANDATORY_OBJS) $(LIB_H)
 	@echo Building libft
-	@ar rcs $(LIB) $(OBJS)
+	@ar rcs $(LIB) $(MANDATORY_OBJS)
+	@printf "$(GREEN)===============BUILD COMPLETED===============$(NC)\n"
+
+.PHONY: bonus
+bonus: $(ALL_OBJS) $(LIB_H)
+	@echo Building libft
+	@ar rcs $(LIB) $(ALL_OBJS)
 	@printf "$(GREEN)===============BUILD COMPLETED===============$(NC)\n"
 
 $(BUILD_DIR)/%.c.o: %.c $(LIB_H)
