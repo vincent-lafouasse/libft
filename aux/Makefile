@@ -32,7 +32,7 @@ $(NAME): $(MANDATORY_OBJS) $(HEADER)
 
 .PHONY: bonus
 bonus: $(ALL_OBJS) $(HEADER)
-	$(AR) $(ARFLAGS) $@ $(ALL_OBJS)
+	$(AR) $(ARFLAGS) $(NAME) $(ALL_OBJS)
 
 $(BUILD_DIR)/%.c.o: %.c $(HEADER)
 	@mkdir -p $(dir $@)

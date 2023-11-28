@@ -9,12 +9,12 @@ mkdir "${DIR_NAME}"
 MANDATORY_C_FILES__=
 BONUS_C_FILES__=
 
-for c_file in $(find "${SRC_DIR}" -name '*.c' | grep -v bonus); do
+for c_file in $(find "${SRC_DIR}" -name '*.c' | grep -v lst); do
 	MANDATORY_C_FILES__+=" $(basename "${c_file}")"
 	cp "${c_file}" "${DIR_NAME}"
 done
 
-for c_file in $(find "${SRC_DIR}" -name '*.c' | grep bonus); do
+for c_file in $(find "${SRC_DIR}" -name '*.c' | grep lst); do
 	BONUS_C_FILES__+=" $(basename "${c_file}")"
 	cp "${c_file}" "${DIR_NAME}"
 done
