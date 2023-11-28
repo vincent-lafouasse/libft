@@ -72,12 +72,13 @@ check: re
 	@echo SAINTE NORMINETTE SOIS CLEMENTE
 	@python3 -c 'print("-" * 80)'
 	@echo
-	@norminette $(C_FILES)
+	@norminette $(MANDATORY_C_FILES) $(BONUS_C_FILES)
 	@echo
 	@norminette $(LIB_H)
 	@printf "$(GREEN)===============NORME OK===============$(NC)\n"
 	@echo
-	@cppcheck --language=c $(C_FILES)
+	@cppcheck --language=c $(MANDATORY_C_FILES) $(BONUS_C_FILES)
+
 	@cppcheck --language=c $(LIB_H)
 	@printf "$(GREEN)===============CPPCHECK OK===============$(NC)\n"
 
