@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:33:46 by poss              #+#    #+#             */
-/*   Updated: 2023/11/28 17:01:04 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/28 19:38:04 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	seek_next_word(const char *s, char c, int len, int start)
 
 int	seek_next_sep(const char *s, char c, int len, int start)
 {
-	while (s[start] != c && start <= len)
+	while (s[start] != c && start < len)
 	{
 		start++;
 	}
@@ -95,25 +95,3 @@ char	**ft_split(char const *s, char c)
 	out[out_index] = NULL;
 	return (out);
 }
-
-/*
-
-#if TESTING
-
-int	main(void)
-{
-	char	c;
-	char	*s;
-	char	**split;
-
-	s = strdup("a b c");
-	c = ' ';
-	printf("%zu\n", get_n_words(s, c, strlen(s)));
-	split = ft_split(s, c);
-	while (*split)
-		printf("%s\n", *split++);
-	free(s);
-}
-#endif
-
-*/
