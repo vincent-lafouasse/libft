@@ -1,5 +1,7 @@
 name: readymade testers
 
+on: workflow_dispatch
+
 jobs:
   build:
 
