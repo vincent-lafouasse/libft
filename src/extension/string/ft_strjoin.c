@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:07:44 by poss              #+#    #+#             */
-/*   Updated: 2023/11/22 14:11:24 by poss             ###   ########.fr       */
+/*   Updated: 2023/11/29 18:43:38 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	ft_memcpy(out, s1, len1);
 	ft_memcpy(out + len1, s2, len2);
-	out[len1 + len2 + 1] = '\0';
+	out[len1 + len2] = '\0';
 	return (out);
 }
