@@ -1,0 +1,15 @@
+name: readymade testers
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: install dependencies
+      run: sudo apt-get update && sudo apt-get -y install libbsd-dev && sudo apt-get -y install cppcheck  && sudo apt-get -y install bear
+
+    - name: Build rendu
+      run: make rendu
