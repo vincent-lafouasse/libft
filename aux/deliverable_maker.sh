@@ -30,16 +30,6 @@ make_rendu() {
 	envsubst <"${TEMPLATE_MAKEFILE}" >"${TARGET_MAKEFILE}"
 }
 
-setup_tripouille() {
-	git clone git@github.com:Tripouille/libftTester.git "${DIR_NAME}/tripouille"
-}
-
-run_tripouille() {
-	make -C "${DIR_NAME}/tripouille"
-}
-
 ################################################################################
 
 make_rendu
-
-setup_tripouille && run_tripouille
