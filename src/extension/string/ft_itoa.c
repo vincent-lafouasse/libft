@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:37:48 by poss              #+#    #+#             */
-/*   Updated: 2023/11/22 22:24:38 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/01 16:55:39 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ void	reverse_fill(char *buffer, int n)
 	abs = ft_abs(n);
 	while (abs)
 	{
-		*buffer = '0' + (abs % 10);
+		*buffer++ = '0' + (abs % 10);
 		abs /= 10;
-		buffer++;
 	}
 	if (n < 0)
-		*buffer = '-';
+		*buffer++ = '-';
+	*buffer = 0;
 }
 
 void	mem_reverse(void *s, size_t len)
