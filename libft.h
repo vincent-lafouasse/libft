@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/26 15:36:41 by poss              #+#    #+#             */
-/*   Updated: 2023/11/30 23:28:02 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/02 15:44:04 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,6 @@ size_t					ft_strlcat(char *dst, const char *src,
 char					*ft_strdup(const char *s);
 void					*ft_memcpy(void *dest, const void *src, size_t n);
 void					*ft_memmove(void *dest, const void *src, size_t n);
-void					*ft_memccpy(void *dest, const void *src, int c,
-							size_t n);
 int						ft_memcmp(const void *s1, const void *s2, size_t n);
 int						ft_strncmp(const char *s1, const char *s2, size_t n);
 void					*ft_memchr(const void *s, int c, size_t n);
@@ -59,9 +57,6 @@ int						ft_isascii(int c);
 int						ft_isprint(int c);
 int						ft_toupper(int c);
 int						ft_tolower(int c);
-
-int						ft_isupper(int c);
-int						ft_islower(int c);
 
 /* ----- string extension --------------------------------------------------- */
 char					*ft_strjoin(char const *s1, char const *s2);
