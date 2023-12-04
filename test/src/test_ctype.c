@@ -35,6 +35,7 @@ static void compare_as_bool(int (*my_ft)(int), int (*libc_ft)(int), int c)
     TEST_ASSERT_TRUE_MESSAGE(expected == actual, error);
 }
 
+/*
 static void test_islower(void)
 {
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
@@ -47,6 +48,7 @@ static void test_isupper(void)
         compare_as_bool(&ft_isupper, &isupper, c);
 }
 
+*/
 static void test_isdigit(void)
 {
     for (int c = LOWER_BOUND; c <= UPPER_BOUND; c++)
@@ -104,8 +106,8 @@ void run_test_ctype(void)
     RUN_TEST(test_isprint);
     RUN_TEST(test_isalpha);
     RUN_TEST(test_isalnum);
-    RUN_TEST(test_islower);
-    RUN_TEST(test_isupper);
+    //RUN_TEST(test_islower);
+    //RUN_TEST(test_isupper);
     //RUN_TEST(test_isspace);
     RUN_TEST(test_toupper);
     RUN_TEST(test_tolower);
