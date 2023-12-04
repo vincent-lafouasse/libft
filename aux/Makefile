@@ -1,6 +1,6 @@
 NAME=libft.a
 
-BUILD_DIR='./build'
+BUILD_DIR=./build
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
