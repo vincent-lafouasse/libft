@@ -6,11 +6,9 @@
 /*   By: vlafouas <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/07 15:02:37 by vlafouas          #+#    #+#             */
-/*   Updated: 2023/12/02 15:43:31 by vlafouas         ###   ########.fr       */
+/*   Updated: 2023/12/04 18:00:55 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 static int	ft_islower(int c);
 static int	ft_isupper(int c);
