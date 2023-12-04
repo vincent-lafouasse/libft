@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:14:45 by poss              #+#    #+#             */
-/*   Updated: 2023/12/01 17:17:36 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/04 17:28:19 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*out;
 
 	if (start >= ft_strlen(s))
-	{
-		out = malloc(1);
-		if (!out)
-			return (NULL);
-		*out = '\0';
-		return (out);
-	}
+		return (ft_strdup(""));
 	len = min(len, ft_strlen(s + start));
 	out = malloc(1 + len);
 	if (!out)

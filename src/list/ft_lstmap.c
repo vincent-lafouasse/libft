@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 21:12:17 by poss              #+#    #+#             */
-/*   Updated: 2023/11/28 21:17:13 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/04 17:34:36 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	{
 		new = ft_lstnew((*f)(lst->content));
 		if (!new)
-		{
-			ft_lstclear(&out, del);
-			return (NULL);
-		}
+			return (ft_lstclear(&out, del), NULL);
 		ft_lstadd_back(&out, new);
 		lst = lst->next;
 	}

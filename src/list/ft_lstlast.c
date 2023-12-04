@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 20:47:45 by poss              #+#    #+#             */
-/*   Updated: 2023/11/28 20:48:46 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/04 17:31:56 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,9 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
-	if (lst == NULL)
-	{
+	if (!lst)
 		return (NULL);
-	}
-	while (lst->next != NULL)
+	while (lst->next)
 	{
 		lst = lst->next;
 	}

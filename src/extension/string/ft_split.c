@@ -6,30 +6,43 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 16:33:46 by poss              #+#    #+#             */
-/*   Updated: 2023/11/28 19:38:04 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/04 17:26:14 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdbool.h>
-#include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
 
-#define TESTING 1
-
+size_t	get_n_words(char const *s, char c, size_t len);
 int		seek_next_word(const char *s, char c, int len, int start);
 int		seek_next_sep(const char *s, char c, int len, int start);
+void	*ft_free(char **s, int i);
 
-void	*ft_free(char **s, int i)
+char	**ft_split(char const *s, char c)
 {
-	while (i >= 0)
+	char	**out;
+	int		start;
+	int		end;
+	int		len;
+	int		out_index;
+
+	len = ft_strlen(s);
+	out = malloc((1 + get_n_words(s, c, len)) * sizeof(char *));
+	if (out == NULL)
+		return (NULL);
+	out_index = 0;
+	start = seek_next_word(s, c, len, 0);
+	while (start != -1)
 	{
-		free(s[i]);
-		i--;
+		end = seek_next_sep(s, c, len, start);
+		out[out_index] = ft_substr(s, start, end - start);
+		if (out[out_index] == NULL)
+			return (ft_free(out, out_index));
+		start = seek_next_word(s, c, len, end);
+		out_index++;
 	}
-	free(s);
-	return (NULL);
+	out[out_index] = NULL;
+	return (out);
 }
 
 size_t	get_n_words(char const *s, char c, size_t len)
@@ -69,29 +82,13 @@ int	seek_next_sep(const char *s, char c, int len, int start)
 	return (start);
 }
 
-char	**ft_split(char const *s, char c)
+void	*ft_free(char **s, int i)
 {
-	char	**out;
-	int		start;
-	int		end;
-	int		len;
-	int		out_index;
-
-	len = ft_strlen(s);
-	out = malloc((1 + get_n_words(s, c, len)) * sizeof(char *));
-	if (out == NULL)
-		return (NULL);
-	out_index = 0;
-	start = seek_next_word(s, c, len, 0);
-	while (start != -1)
+	while (i >= 0)
 	{
-		end = seek_next_sep(s, c, len, start);
-		out[out_index] = ft_substr(s, start, end - start);
-		if (out[out_index] == NULL)
-			return (ft_free(out, out_index));
-		start = seek_next_word(s, c, len, end);
-		out_index++;
+		free(s[i]);
+		i--;
 	}
-	out[out_index] = NULL;
-	return (out);
+	free(s);
+	return (NULL);
 }

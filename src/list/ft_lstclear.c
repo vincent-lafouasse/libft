@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 21:02:26 by poss              #+#    #+#             */
-/*   Updated: 2023/11/28 21:09:21 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/04 17:33:03 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*mem;
 
-	if (*lst == NULL || del == NULL)
+	if (!lst || !*lst || !del)
 		return ;
 	while (*lst)
 	{

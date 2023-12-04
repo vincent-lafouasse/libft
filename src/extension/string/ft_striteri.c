@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:29:50 by poss              #+#    #+#             */
-/*   Updated: 2023/11/22 15:31:49 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/04 17:24:49 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 
+	if (!s | !f)
+		return ;
 	i = 0;
 	while (s[i])
 	{
