@@ -6,7 +6,7 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 16:11:11 by poss              #+#    #+#             */
-/*   Updated: 2023/11/22 00:12:08 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/21 16:11:33 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,6 @@ size_t	ft_strlcat(char *dst, const char *src, size_t buffer_size)
 		return (buffer_size + ft_strlen(src));
 	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
-	if (dst_len > buffer_size)
-	{
-		return (buffer_size + src_len);
-	}
 	if (dst_len + src_len < buffer_size)
 	{
 		ft_memcpy(dst + dst_len, src, 1 + src_len);

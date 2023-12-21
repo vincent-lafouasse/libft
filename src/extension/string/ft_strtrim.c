@@ -6,12 +6,11 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 14:28:59 by poss              #+#    #+#             */
-/*   Updated: 2023/12/04 17:29:50 by poss             ###   ########.fr       */
+/*   Updated: 2023/12/21 16:05:58 by vlafouas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static size_t	get_n_leading_chars(char const *s1, char const *set);
 static size_t	get_n_trailing_chars(char const *s1, char const *set);
