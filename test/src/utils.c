@@ -1,6 +1,6 @@
 #include "utils.h"
 
-#include "test-framework/unity.h"
+#include "unity.h"
 
 #include <stdlib.h>
 

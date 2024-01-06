@@ -1,6 +1,6 @@
 #include "libft.h"
 
-#include "test-framework/unity.h"
+#include "unity.h"
 
 #include <ctype.h>
 #include <stdbool.h>
@@ -106,9 +106,9 @@ void run_test_ctype(void)
     RUN_TEST(test_isprint);
     RUN_TEST(test_isalpha);
     RUN_TEST(test_isalnum);
-    //RUN_TEST(test_islower);
-    //RUN_TEST(test_isupper);
-    //RUN_TEST(test_isspace);
+    // RUN_TEST(test_islower);
+    // RUN_TEST(test_isupper);
+    // RUN_TEST(test_isspace);
     RUN_TEST(test_toupper);
     RUN_TEST(test_tolower);
     RUN_TEST(test_isascii);

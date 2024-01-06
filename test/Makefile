@@ -1,27 +1,30 @@
 EXEC = tests.out
 
 BUILD_DIR = ./build
-SRC_DIR = ./src
+SRC_DIR   = ./src
 
 SRCS := $(shell find $(SRC_DIR) -name '*.c')
 OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
+DEPS := $(OBJS:%.o=%.d)
 
-LIBS = -lft
-LDFLAGS = -L..
-
-INC_DIRS = ../include
-INC_DIRS += ./include
-INC_DIRS += ./src/test-framework
+INC_DIRS   = ../include
+INC_DIRS  += ./include
+INC_DIRS  += ./Unity/include
 INC_FLAGS := $(addprefix -I,$(INC_DIRS))
 
-CC = clang
-CFLAGS  = -std=gnu99
-CFLAGS += -g3
-CFLAGS += -Wall -Wextra
-#CFLAGS += -Werror
-CFLAGS += $(INC_FLAGS)
+LIBS     = -lft
+LDFLAGS  = -L..
 
-CFLAGS += -DUNITY_SUPPORT_64 -DUNITY_OUTPUT_COLOR
+LIBS    += -lunity
+LDFLAGS += -LUnity
+
+CC = clang
+CFLAGS   = -std=gnu99
+CFLAGS  += -g3
+CFLAGS  += -Wall -Wextra
+#CFLAGS += -Werror
+
+CPPFLAGS = $(INC_FLAGS) -MMD -MP
 
 
 # link libbsd only on Linux, not on macOS
@@ -45,6 +48,7 @@ build: $(BUILD_DIR)/$(EXEC)
 # Linking
 $(BUILD_DIR)/$(EXEC): $(OBJS)
 	@make -C ..
+	@make -C Unity
 	@echo Linking Test Binary
 	@$(CC) $^ -o $@ $(LDFLAGS) $(LIBS)
 
@@ -52,7 +56,7 @@ $(BUILD_DIR)/$(EXEC): $(OBJS)
 $(BUILD_DIR)/%.c.o: %.c
 	@echo Compile $<
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 .PHONY: clean
 clean:
@@ -79,3 +83,4 @@ b: build
 f: format
 c: clean
 
+-include $(DEPS)
