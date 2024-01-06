@@ -8,18 +8,14 @@ BUILD_DIR = ./build
 
 LIB_H = $(INC_DIR)/libft.h
 
-MANDATORY_C_FILES = $(shell find $(SRC_DIR) -name '*.c' | grep -v lst)
-BONUS_C_FILES = $(shell find $(SRC_DIR) -name '*.c' | grep lst)
-
-MANDATORY_OBJS := $(MANDATORY_C_FILES:%=$(BUILD_DIR)/%.o)
-BONUS_OBJS := $(BONUS_C_FILES:%=$(BUILD_DIR)/%.o)
-ALL_OBJS = $(MANDATORY_OBJS)
-ALL_OBJS += $(BONUS_OBJS)
+C_FILES = $(shell find $(SRC_DIR) -name '*.c')
+OBJS := $(C_FILES:%=$(BUILD_DIR)/%.o)
+DEPS := $(OBJS:%.o=%.d)
 
 
 CFLAGS  = -Wall -Wextra
 #CFLAGS += -Werror
-CFLAGS += -I$(INC_DIR) 
+CPPFLAGS  = -I$(INC_DIR) -MMD -MP
 
 .PHONY: all
 all: build
@@ -27,21 +23,15 @@ all: build
 .PHONY: build
 build: $(LIB)
 
-$(LIB): $(MANDATORY_OBJS) $(LIB_H)
+$(LIB): $(OBJS)
 	@echo Building libft
-	@ar rcs $(LIB) $(MANDATORY_OBJS)
+	@ar rcs $@ $^
 	@printf "$(GREEN)===============BUILD COMPLETED===============$(NC)\n"
 
-.PHONY: bonus
-bonus: $(ALL_OBJS) $(LIB_H)
-	@echo Building libft
-	@ar rcs $(LIB) $(ALL_OBJS)
-	@printf "$(GREEN)===============BUILD COMPLETED===============$(NC)\n"
-
-$(BUILD_DIR)/%.c.o: %.c $(LIB_H)
+$(BUILD_DIR)/%.c.o: %.c
 	@echo Compiling $<
 	@mkdir -p $(dir $@)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
 
 .PHONY: clean
 clean:
@@ -72,20 +62,15 @@ check: re
 	@echo SAINTE NORMINETTE SOIS CLEMENTE
 	@python3 -c 'print("-" * 80)'
 	@echo
-	@norminette $(MANDATORY_C_FILES) $(BONUS_C_FILES)
+	@norminette $(C_FILES) $(BONUS_C_FILES)
 	@echo
 	@norminette $(LIB_H)
 	@printf "$(GREEN)===============NORME OK===============$(NC)\n"
 	@echo
-	@cppcheck --language=c $(MANDATORY_C_FILES) $(BONUS_C_FILES)
+	@cppcheck --language=c $(C_FILES) $(BONUS_C_FILES)
 
 	@cppcheck --language=c $(LIB_H)
 	@printf "$(GREEN)===============CPPCHECK OK===============$(NC)\n"
-
-.PHONY: rendu
-rendu:
-	bash aux/deliverable_maker.sh
-	@make -C rendu
 
 # LSP stuff, don't worry about it
 .PHONY: update
@@ -104,3 +89,5 @@ t: test
 
 GREEN = \033[0;32m
 NC = \033[0m
+
+-include $(DEPS)
