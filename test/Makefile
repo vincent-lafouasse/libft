@@ -65,8 +65,8 @@ clean:
 
 .PHONY: format
 format:
-	clang-format -i $(shell find $(SRC_DIR) -name '*.c' | grep -v unity)
-	clang-format -i $(shell find $(SRC_DIR) -name '*.h' | grep -v unity)
+	clang-format -i $(shell find $(SRC_DIR) -name '*.c')
+	clang-format -i $(shell find './include' -name '*.h')
 
 # LSP stuff, don't worry about it
 .PHONY: update
