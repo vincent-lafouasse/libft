@@ -7,7 +7,7 @@ SRCS := $(shell find $(SRC_DIR) -name '*.c')
 OBJS := $(SRCS:%=$(BUILD_DIR)/%.o)
 
 LIBS = -lft
-LDFLAGS = -L..
+LDFLAGS = -L../include
 
 INC_DIRS = ..
 INC_DIRS += ./include
