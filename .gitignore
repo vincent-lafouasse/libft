@@ -1,5 +1,6 @@
 build/
 libft.a
+*.a
 
 .cache
 .DS_store
