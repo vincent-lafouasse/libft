@@ -14,7 +14,7 @@
 # define FT_IO_H
 
 char	*get_next_line(int fd);
-int	ft_printf(const char *format, ...);
+int		ft_printf(const char *format, ...);
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(const char *s, int fd);

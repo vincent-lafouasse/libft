@@ -13,12 +13,11 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include "libft/stdlib.h"
-# include "libft/string.h"
 # include "libft/ctype.h"
-
 # include "libft/ft_io.h"
 # include "libft/ft_string.h"
+# include "libft/stdlib.h"
+# include "libft/string.h"
 # include "libft/t_list.h"
 # include "libft/types.h"
 

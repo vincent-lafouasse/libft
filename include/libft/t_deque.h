@@ -13,12 +13,12 @@
 #ifndef T_DEQUE_H
 # define T_DEQUE_H
 
-#include "t_list.h"
+# include "t_list.h"
 
 typedef struct s_deque
 {
-		t_list* head;
-		t_list* tail;
-} t_deque;
+	t_list	*head;
+	t_list	*tail;
+}			t_deque;
 
 #endif
