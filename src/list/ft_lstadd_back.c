@@ -6,11 +6,12 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 20:54:25 by poss              #+#    #+#             */
-/*   Updated: 2023/12/04 17:31:04 by poss             ###   ########.fr       */
+/*   Updated: 2024/04/17 19:19:24 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft/t_list.h"
+#include <stddef.h>
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {

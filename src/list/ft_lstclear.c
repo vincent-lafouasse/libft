@@ -6,12 +6,11 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 21:02:26 by poss              #+#    #+#             */
-/*   Updated: 2023/12/04 17:33:03 by poss             ###   ########.fr       */
+/*   Updated: 2024/04/17 19:20:05 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "libft/t_list.h"
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {

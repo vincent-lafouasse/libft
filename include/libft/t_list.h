@@ -6,14 +6,12 @@
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/30 09:33:26 by poss              #+#    #+#             */
-/*   Updated: 2024/04/17 19:16:33 by poss             ###   ########.fr       */
+/*   Updated: 2024/04/17 19:18:31 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef T_LIST_H
 # define T_LIST_H
-
-# include <stddef.h>
 
 typedef struct s_list
 {
