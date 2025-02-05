@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   t_deque.h                                          :+:      :+:    :+:   */
+/*   stdio.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: poss <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/04 13:57:39 by poss              #+#    #+#             */
-/*   Updated: 2024/04/04 14:00:09 by poss             ###   ########.fr       */
+/*   Created: 2025/02/05 21:41:13 by poss              #+#    #+#             */
+/*   Updated: 2025/02/05 21:41:46 by poss             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef T_DEQUE_H
-# define T_DEQUE_H
+#ifndef STDIO_H
+# define STDIO_H
 
-# include "t_list.h"
-
-typedef struct s_deque
-{
-	t_list	*head;
-	t_list	*tail;
-}			t_deque;
+int	ft_printf(const char *format, ...);
 
 #endif
